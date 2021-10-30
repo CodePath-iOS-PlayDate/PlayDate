@@ -1,4 +1,4 @@
-CodePath iOS Group 2 Project
+CodePath iOS Group Project
 ===
 
 # PlayDate
