@@ -3,6 +3,8 @@ CodePath iOS Group Project
 
 # PlayDate
 
+![PlayDate Icon](https://github.com/CodePath-iOS-PlayDate/PlayDate/blob/main/PlayDate/Assets.xcassets/AppIcon.appiconset/icon-76%402x.png)
+
 ## Table of Contents
 1. [Overview](#Overview)
 1. [Product Spec](#Product-Spec)
