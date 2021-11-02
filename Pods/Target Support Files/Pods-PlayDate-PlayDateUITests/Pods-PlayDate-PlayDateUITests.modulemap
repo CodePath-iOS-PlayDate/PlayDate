@@ -1,0 +1,6 @@
+framework module Pods_PlayDate_PlayDateUITests {
+  umbrella header "Pods-PlayDate-PlayDateUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}
