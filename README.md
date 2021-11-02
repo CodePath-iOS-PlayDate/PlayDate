@@ -1,9 +1,7 @@
-CodePath iOS Group Project
+CodePath iOS Group 2 Project
 ===
 
 # PlayDate
-
-![PlayDate Icon](https://github.com/CodePath-iOS-PlayDate/PlayDate/blob/main/PlayDate/Assets.xcassets/AppIcon.appiconset/icon-76%402x.png)
 
 ## Table of Contents
 1. [Overview](#Overview)
@@ -109,6 +107,16 @@ An app for setting up play-dates with fellow pet owners.
 ![Wireframe 2](https://i.imgur.com/YSFzoMg.jpg)
 
 ### [BONUS] Digital Wireframes & Mockups
+
+
+
+| Start | Register Screen | Login Screen |
+| -------- | -------- | -------- |
+| ![](https://i.imgur.com/07uCeYb.png) | ![](https://i.imgur.com/cbD3JDE.png) |![](https://i.imgur.com/MdGXokw.png)|  
+
+| Profile Setup (Owner) | Profile Setup (Pet) |
+| -------- | -------- |
+| ![](https://i.imgur.com/HksUboo.png) | ![](https://i.imgur.com/WjwJkXn.png) |
 
 ### [BONUS] Interactive Prototype
 
