@@ -78,6 +78,41 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		07C4DA382731914500B36C49 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		07C4DA392731915D00B36C49 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		07C4DA3A2731916F00B36C49 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		07C4DA3B2731917800B36C49 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		07C4DA3C273191A200B36C49 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
 		07DD75E02730288200EFBC9B = {
 			isa = PBXGroup;
 			children = (
@@ -101,6 +136,11 @@
 		07DD75EB2730288200EFBC9B /* PlayDate */ = {
 			isa = PBXGroup;
 			children = (
+				07C4DA382731914500B36C49 /* Utilities */,
+				07C4DA3A2731916F00B36C49 /* Models */,
+				07C4DA3C273191A200B36C49 /* ViewModels */,
+				07C4DA392731915D00B36C49 /* Views */,
+				07C4DA3B2731917800B36C49 /* ViewControllers */,
 				07DD75EC2730288200EFBC9B /* AppDelegate.swift */,
 				07DD75EE2730288200EFBC9B /* SceneDelegate.swift */,
 				07DD75F02730288200EFBC9B /* ViewController.swift */,
