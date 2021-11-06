@@ -45,6 +45,7 @@ An app for setting up play-dates with fellow pet owners.
 * Chat system between matched users
 * Favorite list of matches
 * Notification System
+* Owner can have multiple pets
 
 ### 2. Screen Archetypes
 
@@ -106,8 +107,7 @@ An app for setting up play-dates with fellow pet owners.
 ![Wireframe 1](https://i.imgur.com/wJHCxOl.jpg)
 ![Wireframe 2](https://i.imgur.com/YSFzoMg.jpg)
 
-### [BONUS] Digital Wireframes & Mockups
-
+### Digital Wireframes & Mockups
 
 
 | Start | Register Screen | Login Screen |
@@ -118,13 +118,62 @@ An app for setting up play-dates with fellow pet owners.
 | -------- | -------- |
 | ![](https://i.imgur.com/HksUboo.png) | ![](https://i.imgur.com/WjwJkXn.png) |
 
-### [BONUS] Interactive Prototype
-
 ## Schema 
-[This section will be completed in Unit 9]
 ### Models
-[Add table of models]
+
+**Owner Profile**
+| Property | Type | Description |
+| -------- | -------- | -------- |
+| profileId | String  | unique id for the user profile |
+| ownerProfilePicture | Image | picture of owner |
+| ownerName | String | name of owner |
+| ownerAge | Int | age of owner |
+| pet | Pet | the owner's pet |
+
+**Pet Profile**
+| Property | Type | Description |
+| -------- | -------- | -------- |
+| profileId | String  | unique id for the pet profile |
+| petProfilePicture | Image | single profile image of pet |
+| petName | String | name of pet |
+| petType | String | type of pet |
+| petAge | Int | age of owner |
+| petSex | String | sex of pet | 
+| petBio | String[] | description of pet |
+| petPictures | Image[] | List of pictures for pet |
+
 ### Networking
-- [Add list of network requests by screen ]
-- [Create basic snippets for each Parse network request]
-- [OPTIONAL: List endpoints if using existing API such as Yelp]
+**List of network requests by screen**
+- Register Screen
+    - (create/POST) create profile oject: send email and password to database
+- Login Screen
+    - (Read/GET) read existing username 
+    - (Read/GET) read existing password 
+    - (Create/POST) create a new login session
+- Profile Set Up Screen 
+    - (Create/POST) Add user's name
+    - (Create/POST) Add user's age
+    - (Create/POST) Add user's birthdate
+- Pet Set Up Screen
+    - (Create/POST) Add pet's name
+    - (Create/POST) Add pet's type
+    - (Create/POST) Add pet's age
+- Home Screen
+    - (Read/GET) Query potential matches
+    - (Create/POST) Create new like (swipe right) on potential match
+    - (Create/POST) Create new dislike (swipe left) on potential match
+- Matches Screen
+    - (Read/GET) Query matched profiles
+    - (Delete) Delete existing matched profile
+- Owner Profile Screen
+    - (Read/GET) Query owner profile information
+    - (Update/PUT) Update owner profile image
+- Pet Profile Screen
+    - (Read/GET) Query pet profile information
+    - (Update/PUT) Update pet profile image
+    - (Update/PUT) Update pet name
+    - (Update/PUT) Update pet type
+    - (Update/PUT) Update pet age
+    - (Update/PUT) Update pet sex
+    - (Update/PUT) Update pet bio
+    - (Update/PUT) Update pet pictures
