@@ -20,6 +20,7 @@
 		07C54B17273A0F8B004C0742 /* PetRegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C54B16273A0F8B004C0742 /* PetRegisterViewController.swift */; };
 		07C54B19273A0FA7004C0742 /* MainLaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C54B18273A0FA7004C0742 /* MainLaunchViewController.swift */; };
 		07C54B1C273A0FDE004C0742 /* MatchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C54B1B273A0FDE004C0742 /* MatchTableViewCell.swift */; };
+		07C54B1E273A1007004C0742 /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C54B1D273A1007004C0742 /* AuthManager.swift */; };
 		07D90C33273716EA0049D3A3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 07D90C32273716EA0049D3A3 /* GoogleService-Info.plist */; };
 		07D90C34273716EA0049D3A3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 07D90C32273716EA0049D3A3 /* GoogleService-Info.plist */; };
 		07D90C35273716EA0049D3A3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 07D90C32273716EA0049D3A3 /* GoogleService-Info.plist */; };
@@ -67,6 +68,7 @@
 		07C54B16273A0F8B004C0742 /* PetRegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetRegisterViewController.swift; sourceTree = "<group>"; };
 		07C54B18273A0FA7004C0742 /* MainLaunchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainLaunchViewController.swift; sourceTree = "<group>"; };
 		07C54B1B273A0FDE004C0742 /* MatchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchTableViewCell.swift; sourceTree = "<group>"; };
+		07C54B1D273A1007004C0742 /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
 		07D90C32273716EA0049D3A3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		07DD75E92730288200EFBC9B /* PlayDate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PlayDate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		07DD75EC2730288200EFBC9B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -122,6 +124,7 @@
 		07C4DA382731914500B36C49 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				07C54B1D273A1007004C0742 /* AuthManager.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -504,6 +507,7 @@
 				07C54B0D273A0F1F004C0742 /* UserRegister.swift in Sources */,
 				07C54B11273A0F3B004C0742 /* PetRegister.swift in Sources */,
 				07C54B07273A0EB5004C0742 /* UserProfile.swift in Sources */,
+				07C54B1E273A1007004C0742 /* AuthManager.swift in Sources */,
 				07DD75F12730288200EFBC9B /* ViewController.swift in Sources */,
 				07DD75F72730288200EFBC9B /* PlayDate.xcdatamodeld in Sources */,
 				07DD75ED2730288200EFBC9B /* AppDelegate.swift in Sources */,
