@@ -22,7 +22,7 @@ class MainLaunchViewController: UIViewController {
     let logoImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFit
-        return UIImageView()
+        return imageView
     }()
     
     let loginButton: UIButton = {
