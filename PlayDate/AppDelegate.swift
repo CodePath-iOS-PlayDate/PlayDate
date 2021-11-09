@@ -24,7 +24,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // View controllers
         window?.backgroundColor = .systemBackground
-        window?.rootViewController = ViewController()
+        
+        let image = UIImage(named: "Logo")
+        let main = MainLaunchViewController()
+        main.image = image
+        window?.rootViewController = main
         
         return true
     }
