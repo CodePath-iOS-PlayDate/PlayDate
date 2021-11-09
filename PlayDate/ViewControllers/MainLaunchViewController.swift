@@ -15,7 +15,7 @@ class MainLaunchViewController: UIViewController {
         stackView.alignment = .center
         stackView.axis = .vertical
         stackView.distribution = .fillProportionally
-        stackView.spacing = 47
+        stackView.spacing = 27
         return stackView
     }()
     
@@ -33,7 +33,11 @@ class MainLaunchViewController: UIViewController {
         container.font = .systemFont(ofSize: 36, weight: .medium)
         config.attributedTitle = AttributedString("Login", attributes: container)
         
-        return UIButton(configuration: config, primaryAction: nil)
+        var action = UIAction() { _ in
+            print("Going to Login VC")
+        }
+        
+        return UIButton(configuration: config, primaryAction: action)
     }()
     
     let registerButton: UIButton = {
@@ -44,7 +48,11 @@ class MainLaunchViewController: UIViewController {
         container.font = .systemFont(ofSize: 36, weight: .medium)
         config.attributedTitle = AttributedString("Register", attributes: container)
         
-        return UIButton(configuration: config, primaryAction: nil)
+        var action = UIAction() { _ in
+            print("Going to Regsiter VC")
+        }
+        
+        return UIButton(configuration: config, primaryAction: action)
     }()
     
     // Properties
