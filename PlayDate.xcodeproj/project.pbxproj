@@ -7,6 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		07C54B03273A0E7F004C0742 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C54B02273A0E7F004C0742 /* User.swift */; };
+		07C54B05273A0E9B004C0742 /* Pet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C54B04273A0E9B004C0742 /* Pet.swift */; };
+		07C54B07273A0EB5004C0742 /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C54B06273A0EB5004C0742 /* UserProfile.swift */; };
+		07C54B09273A0EBE004C0742 /* PetProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C54B08273A0EBE004C0742 /* PetProfile.swift */; };
+		07C54B0B273A0F12004C0742 /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C54B0A273A0F12004C0742 /* Login.swift */; };
+		07C54B0D273A0F1F004C0742 /* UserRegister.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C54B0C273A0F1F004C0742 /* UserRegister.swift */; };
+		07C54B0F273A0F27004C0742 /* Launch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C54B0E273A0F27004C0742 /* Launch.swift */; };
+		07C54B11273A0F3B004C0742 /* PetRegister.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C54B10273A0F3B004C0742 /* PetRegister.swift */; };
+		07C54B13273A0F73004C0742 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C54B12273A0F73004C0742 /* FeedViewController.swift */; };
+		07C54B15273A0F81004C0742 /* UserRegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C54B14273A0F81004C0742 /* UserRegisterViewController.swift */; };
+		07C54B17273A0F8B004C0742 /* PetRegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C54B16273A0F8B004C0742 /* PetRegisterViewController.swift */; };
+		07C54B19273A0FA7004C0742 /* MainLaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C54B18273A0FA7004C0742 /* MainLaunchViewController.swift */; };
+		07C54B1C273A0FDE004C0742 /* MatchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C54B1B273A0FDE004C0742 /* MatchTableViewCell.swift */; };
 		07D90C33273716EA0049D3A3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 07D90C32273716EA0049D3A3 /* GoogleService-Info.plist */; };
 		07D90C34273716EA0049D3A3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 07D90C32273716EA0049D3A3 /* GoogleService-Info.plist */; };
 		07D90C35273716EA0049D3A3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 07D90C32273716EA0049D3A3 /* GoogleService-Info.plist */; };
@@ -41,6 +54,19 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		07C54B02273A0E7F004C0742 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		07C54B04273A0E9B004C0742 /* Pet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pet.swift; sourceTree = "<group>"; };
+		07C54B06273A0EB5004C0742 /* UserProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
+		07C54B08273A0EBE004C0742 /* PetProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetProfile.swift; sourceTree = "<group>"; };
+		07C54B0A273A0F12004C0742 /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
+		07C54B0C273A0F1F004C0742 /* UserRegister.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRegister.swift; sourceTree = "<group>"; };
+		07C54B0E273A0F27004C0742 /* Launch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Launch.swift; sourceTree = "<group>"; };
+		07C54B10273A0F3B004C0742 /* PetRegister.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetRegister.swift; sourceTree = "<group>"; };
+		07C54B12273A0F73004C0742 /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
+		07C54B14273A0F81004C0742 /* UserRegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRegisterViewController.swift; sourceTree = "<group>"; };
+		07C54B16273A0F8B004C0742 /* PetRegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetRegisterViewController.swift; sourceTree = "<group>"; };
+		07C54B18273A0FA7004C0742 /* MainLaunchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainLaunchViewController.swift; sourceTree = "<group>"; };
+		07C54B1B273A0FDE004C0742 /* MatchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchTableViewCell.swift; sourceTree = "<group>"; };
 		07D90C32273716EA0049D3A3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		07DD75E92730288200EFBC9B /* PlayDate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PlayDate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		07DD75EC2730288200EFBC9B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -103,6 +129,7 @@
 		07C4DA392731915D00B36C49 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				07C54B1A273A0FB2004C0742 /* Cells */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -110,6 +137,8 @@
 		07C4DA3A2731916F00B36C49 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				07C54B02273A0E7F004C0742 /* User.swift */,
+				07C54B04273A0E9B004C0742 /* Pet.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -117,6 +146,10 @@
 		07C4DA3B2731917800B36C49 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				07C54B12273A0F73004C0742 /* FeedViewController.swift */,
+				07C54B14273A0F81004C0742 /* UserRegisterViewController.swift */,
+				07C54B16273A0F8B004C0742 /* PetRegisterViewController.swift */,
+				07C54B18273A0FA7004C0742 /* MainLaunchViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -124,8 +157,22 @@
 		07C4DA3C273191A200B36C49 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				07C54B06273A0EB5004C0742 /* UserProfile.swift */,
+				07C54B08273A0EBE004C0742 /* PetProfile.swift */,
+				07C54B0A273A0F12004C0742 /* Login.swift */,
+				07C54B0C273A0F1F004C0742 /* UserRegister.swift */,
+				07C54B10273A0F3B004C0742 /* PetRegister.swift */,
+				07C54B0E273A0F27004C0742 /* Launch.swift */,
 			);
 			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		07C54B1A273A0FB2004C0742 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				07C54B1B273A0FDE004C0742 /* MatchTableViewCell.swift */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 		07DD75E02730288200EFBC9B = {
@@ -450,9 +497,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				07C54B09273A0EBE004C0742 /* PetProfile.swift in Sources */,
+				07C54B05273A0E9B004C0742 /* Pet.swift in Sources */,
+				07C54B03273A0E7F004C0742 /* User.swift in Sources */,
+				07C54B1C273A0FDE004C0742 /* MatchTableViewCell.swift in Sources */,
+				07C54B0D273A0F1F004C0742 /* UserRegister.swift in Sources */,
+				07C54B11273A0F3B004C0742 /* PetRegister.swift in Sources */,
+				07C54B07273A0EB5004C0742 /* UserProfile.swift in Sources */,
 				07DD75F12730288200EFBC9B /* ViewController.swift in Sources */,
 				07DD75F72730288200EFBC9B /* PlayDate.xcdatamodeld in Sources */,
 				07DD75ED2730288200EFBC9B /* AppDelegate.swift in Sources */,
+				07C54B17273A0F8B004C0742 /* PetRegisterViewController.swift in Sources */,
+				07C54B0F273A0F27004C0742 /* Launch.swift in Sources */,
+				07C54B13273A0F73004C0742 /* FeedViewController.swift in Sources */,
+				07C54B19273A0FA7004C0742 /* MainLaunchViewController.swift in Sources */,
+				07C54B15273A0F81004C0742 /* UserRegisterViewController.swift in Sources */,
+				07C54B0B273A0F12004C0742 /* Login.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
