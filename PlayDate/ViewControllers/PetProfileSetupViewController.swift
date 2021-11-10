@@ -18,10 +18,6 @@ class PetProfileSetupViewController: UIViewController {
         return stackView
     }()
     
-//    let petNameTextField: UITextField = UITextField(frame: CGRect(x: 10, y: 320, width: 300.0, height: 30.0));
-//    let petTypeTextField: UITextField = UITextField(frame: CGRect(x: 10, y: 360, width: 300.0, height: 30.0));
-//    let petAgeTextField: UITextField = UITextField(frame: CGRect(x: 10, y: 400, width: 300.0, height: 30.0));
-    
     let petSetupLabel: UILabel = {
         let label = UILabel(frame: CGRect(x: 0, y: 0, width: 100.0, height: 200.0));
         label.text = "Pet Setup"
@@ -36,57 +32,27 @@ class PetProfileSetupViewController: UIViewController {
     let petNameTextField: UITextField = {
         let textField = UITextField(frame: CGRect(x: 20, y: 320, width: 300.0, height: 30.0));
         textField.placeholder = "Pet Name"
-        textField.textColor = .darkGray
-        textField.textAlignment = .left
-        
-        let border = UIView()
-        border.backgroundColor = UIColor(red:0.61, green:0.61, blue:0.61, alpha:1.0)
-        border.translatesAutoresizingMaskIntoConstraints = false
-
-        textField.addSubview(border)
-
-        border.heightAnchor.constraint(equalToConstant: 1).isActive = true
-        border.widthAnchor.constraint(equalTo:textField.widthAnchor).isActive = true
-        border.bottomAnchor.constraint(equalTo: textField.bottomAnchor, constant: -1).isActive = true
-        border.leftAnchor.constraint(equalTo: textField.leftAnchor).isActive = true
+        textField.borderStyle = .roundedRect
+        textField.translatesAutoresizingMaskIntoConstraints = false
+    
         return textField
     }()
     
     let petTypeTextField: UITextField = {
         let textField = UITextField(frame: CGRect(x: 20, y: 360, width: 300.0, height: 30.0));
         textField.placeholder = "Pet Type"
-        textField.textColor = .darkGray
-        textField.textAlignment = .left
-        
-        let border = UIView()
-        border.backgroundColor = UIColor(red:0.61, green:0.61, blue:0.61, alpha:1.0)
-        border.translatesAutoresizingMaskIntoConstraints = false
-
-        textField.addSubview(border)
-
-        border.heightAnchor.constraint(equalToConstant: 1).isActive = true
-        border.widthAnchor.constraint(equalTo:textField.widthAnchor).isActive = true
-        border.bottomAnchor.constraint(equalTo: textField.bottomAnchor, constant: -1).isActive = true
-        border.leftAnchor.constraint(equalTo: textField.leftAnchor).isActive = true
+        textField.borderStyle = .roundedRect
+        textField.translatesAutoresizingMaskIntoConstraints = false
+    
         return textField
     }()
     
     let petAgeTextField: UITextField = {
         let textField = UITextField(frame: CGRect(x: 20, y: 400, width: 300.0, height: 30.0));
         textField.placeholder = "Pet Age"
-        textField.textColor = .darkGray
-        textField.textAlignment = .left
-        
-        let border = UIView()
-        border.backgroundColor = UIColor(red:0.61, green:0.61, blue:0.61, alpha:1.0)
-        border.translatesAutoresizingMaskIntoConstraints = false
+        textField.borderStyle = .roundedRect
+        textField.translatesAutoresizingMaskIntoConstraints = false
 
-        textField.addSubview(border)
-
-        border.heightAnchor.constraint(equalToConstant: 1).isActive = true
-        border.widthAnchor.constraint(equalTo:textField.widthAnchor).isActive = true
-        border.bottomAnchor.constraint(equalTo: textField.bottomAnchor, constant: -1).isActive = true
-        border.leftAnchor.constraint(equalTo: textField.leftAnchor).isActive = true
         return textField
     }()
     
@@ -98,15 +64,27 @@ class PetProfileSetupViewController: UIViewController {
         container.font = .systemFont(ofSize: 36, weight: .medium)
         config.attributedTitle = AttributedString("Add Pictures", attributes: container)
         
-        return UIButton(configuration: config)
+        var action = UIAction() { _ in
+                    print("Opening Camera Roll")
+                }
+        
+        return UIButton(configuration: config, primaryAction: action)
     }()
     
     let skipButton: UIButton = {
-       let button = UIButton()
-       button.setTitle("Skip for now", for: .normal)
-        button.setTitleColor(.systemBlue, for: .normal)
-       button.configuration?.cornerStyle = .small
-       return button
+        var config = UIButton.Configuration.borderless()
+        config.buttonSize = .small
+        
+        var container = AttributeContainer()
+        container.font = .systemFont(ofSize: 20.0, weight: .regular)
+        container.foregroundColor = .systemBlue
+        config.attributedTitle = AttributedString("Skip for now", attributes: container)
+        
+        var action = UIAction() { _ in
+                    print("Skipping ahead")
+                }
+        
+        return UIButton(configuration: config, primaryAction: action)
     }()
     
 
@@ -117,10 +95,12 @@ class PetProfileSetupViewController: UIViewController {
         
     }
     
+    // Properties
     var image: UIImage?
     
     func initView() {
-                
+        
+        // Stack View
         view.addSubview(verticalStackView)
         verticalStackView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
@@ -131,11 +111,37 @@ class PetProfileSetupViewController: UIViewController {
             verticalStackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -26),
         ])
         
+        
+        // Pet Setup Label
         verticalStackView.addArrangedSubview(petSetupLabel)
+        
+        // Pet Name Text Field
+        petNameTextField.setContentHuggingPriority(.required, for: .vertical)
+        petNameTextField.setContentCompressionResistancePriority(.required, for: .vertical)
         verticalStackView.addArrangedSubview(petNameTextField)
+        petNameTextField.widthAnchor.constraint(equalTo: verticalStackView.widthAnchor).isActive = true
+        
+        // Pet Type Text Field
+        petTypeTextField.setContentHuggingPriority(.required, for: .vertical)
+        petTypeTextField.setContentCompressionResistancePriority(.required, for: .vertical)
         verticalStackView.addArrangedSubview(petTypeTextField)
+        petTypeTextField.widthAnchor.constraint(equalTo: verticalStackView.widthAnchor).isActive = true
+        
+        // Pet Age Text Field
+        petAgeTextField.setContentHuggingPriority(.required, for: .vertical)
+        petAgeTextField.setContentCompressionResistancePriority(.required, for: .vertical)
         verticalStackView.addArrangedSubview(petAgeTextField)
+        petAgeTextField.widthAnchor.constraint(equalTo: verticalStackView.widthAnchor).isActive = true
+        
+        // Add Pictures Button
+        addPicturesButton.setContentHuggingPriority(.required, for: .vertical)
+        addPicturesButton.setContentCompressionResistancePriority(.required, for: .vertical)
         verticalStackView.addArrangedSubview(addPicturesButton)
+        addPicturesButton.translatesAutoresizingMaskIntoConstraints = false
+        addPicturesButton.widthAnchor.constraint(equalTo: verticalStackView.widthAnchor).isActive = true
+        
+        
+        // Skip For Now Button
         verticalStackView.addArrangedSubview(skipButton)
         
     }
