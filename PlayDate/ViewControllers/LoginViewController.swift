@@ -121,6 +121,6 @@ class LoginViewController: UIViewController {
     }
     
     @objc func labelTapped(_ sender: UITapGestureRecognizer) {
-        print("Don't have an account? was tapped")
+        print("Need to nav to register vc")
     }
 }
