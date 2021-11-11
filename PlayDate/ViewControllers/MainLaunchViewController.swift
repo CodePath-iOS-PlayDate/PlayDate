@@ -80,15 +80,16 @@ class MainLaunchViewController: UIViewController {
         verticalStackView.addArrangedSubview(logoImageView)
         
         // Login Button
-        loginButton.setContentCompressionResistancePriority(.required, for: .vertical)
+        loginButton.setContentHuggingPriority(.required, for: .vertical)
         verticalStackView.addArrangedSubview(loginButton)
         loginButton.translatesAutoresizingMaskIntoConstraints = false
         loginButton.widthAnchor.constraint(equalTo: verticalStackView.widthAnchor).isActive = true
         
         // Register Button
-        registerButton.setContentCompressionResistancePriority(.required, for: .vertical)
+        registerButton.setContentHuggingPriority(.required, for: .vertical)
         verticalStackView.addArrangedSubview(registerButton)
         registerButton.translatesAutoresizingMaskIntoConstraints = false
         registerButton.widthAnchor.constraint(equalTo: verticalStackView.widthAnchor).isActive = true
+        registerButton.heightAnchor.constraint(equalTo: loginButton.heightAnchor).isActive = true
     }
 }
