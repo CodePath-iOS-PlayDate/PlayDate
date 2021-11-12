@@ -12,37 +12,51 @@ class MainLaunchViewController: UIViewController {
     // UI Element
     let verticalStackView: UIStackView = {
         let stackView = UIStackView()
-        stackView.alignment = .fill
+        stackView.alignment = .center
         stackView.axis = .vertical
-        stackView.distribution = .fill
-        stackView.spacing = 17
+        stackView.distribution = .fillProportionally
+        stackView.spacing = 27
         return stackView
     }()
     
     let logoImageView: UIImageView = {
-        let imageView = UIImageView(image: UIImage(systemName: "pin"))
-        imageView.contentMode = .scaleAspectFill
-        return UIImageView()
+        let imageView = UIImageView()
+        imageView.contentMode = .scaleAspectFit
+        return imageView
     }()
     
     let loginButton: UIButton = {
-        let button = UIButton()
-        button.setTitle("Login", for: .normal)
-        button.backgroundColor = .systemBlue
-        button.configuration?.cornerStyle = .small
-        return button
+        var config = UIButton.Configuration.filled()
+        config.buttonSize = .large
+        
+        var container = AttributeContainer()
+        container.font = .systemFont(ofSize: 36, weight: .medium)
+        config.attributedTitle = AttributedString("Login", attributes: container)
+        
+        var action = UIAction() { _ in
+            print("Going to Login VC")
+        }
+        
+        return UIButton(configuration: config, primaryAction: action)
     }()
     
     let registerButton: UIButton = {
-        let button = UIButton()
-        button.setTitle("Register", for: .normal)
-        button.backgroundColor = .systemBlue
-        button.configuration?.cornerStyle = .small
-        return button
+        var config = UIButton.Configuration.filled()
+        config.buttonSize = .large
+        
+        var container = AttributeContainer()
+        container.font = .systemFont(ofSize: 36, weight: .medium)
+        config.attributedTitle = AttributedString("Register", attributes: container)
+        
+        var action = UIAction() { _ in
+            print("Going to Regsiter VC")
+        }
+        
+        return UIButton(configuration: config, primaryAction: action)
     }()
     
     // Properties
-    var image: UIImage?
+    var logoImage: UIImage?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,6 +64,7 @@ class MainLaunchViewController: UIViewController {
     }
     
     func initView() {
+        // Stack View
         view.addSubview(verticalStackView)
         verticalStackView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
@@ -60,9 +75,21 @@ class MainLaunchViewController: UIViewController {
             verticalStackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -26),
         ])
         
-        logoImageView.image = image
+        // Image View
+        logoImageView.image = logoImage
         verticalStackView.addArrangedSubview(logoImageView)
+        
+        // Login Button
+        loginButton.setContentHuggingPriority(.required, for: .vertical)
         verticalStackView.addArrangedSubview(loginButton)
+        loginButton.translatesAutoresizingMaskIntoConstraints = false
+        loginButton.widthAnchor.constraint(equalTo: verticalStackView.widthAnchor).isActive = true
+        
+        // Register Button
+        registerButton.setContentHuggingPriority(.required, for: .vertical)
         verticalStackView.addArrangedSubview(registerButton)
+        registerButton.translatesAutoresizingMaskIntoConstraints = false
+        registerButton.widthAnchor.constraint(equalTo: verticalStackView.widthAnchor).isActive = true
+        registerButton.heightAnchor.constraint(equalTo: loginButton.heightAnchor).isActive = true
     }
 }
