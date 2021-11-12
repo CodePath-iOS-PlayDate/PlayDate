@@ -17,15 +17,10 @@
 		07C54B11273A0F3B004C0742 /* PetRegister.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C54B10273A0F3B004C0742 /* PetRegister.swift */; };
 		07C54B13273A0F73004C0742 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C54B12273A0F73004C0742 /* FeedViewController.swift */; };
 		07C54B15273A0F81004C0742 /* UserRegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C54B14273A0F81004C0742 /* UserRegisterViewController.swift */; };
-		07C54B17273A0F8B004C0742 /* PetRegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C54B16273A0F8B004C0742 /* PetRegisterViewController.swift */; };
+		07C54B17273A0F8B004C0742 /* PetProfileSetupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C54B16273A0F8B004C0742 /* PetProfileSetupViewController.swift */; };
 		07C54B19273A0FA7004C0742 /* MainLaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C54B18273A0FA7004C0742 /* MainLaunchViewController.swift */; };
 		07C54B1C273A0FDE004C0742 /* MatchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C54B1B273A0FDE004C0742 /* MatchTableViewCell.swift */; };
 		07C54B1E273A1007004C0742 /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C54B1D273A1007004C0742 /* AuthManager.swift */; };
-		07D4B3BF273B3D73008A2E77 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07D4B3BE273B3D73008A2E77 /* LoginViewController.swift */; };
-		07D4B3C1273B551F008A2E77 /* OnboardingTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07D4B3C0273B551F008A2E77 /* OnboardingTextField.swift */; };
-		07D90C33273716EA0049D3A3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 07D90C32273716EA0049D3A3 /* GoogleService-Info.plist */; };
-		07D90C34273716EA0049D3A3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 07D90C32273716EA0049D3A3 /* GoogleService-Info.plist */; };
-		07D90C35273716EA0049D3A3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 07D90C32273716EA0049D3A3 /* GoogleService-Info.plist */; };
 		07DD75ED2730288200EFBC9B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DD75EC2730288200EFBC9B /* AppDelegate.swift */; };
 		07DD75F12730288200EFBC9B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DD75F02730288200EFBC9B /* ViewController.swift */; };
 		07DD75F72730288200EFBC9B /* PlayDate.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 07DD75F52730288200EFBC9B /* PlayDate.xcdatamodeld */; };
@@ -35,6 +30,7 @@
 		07DD76112730288600EFBC9B /* PlayDateUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DD76102730288600EFBC9B /* PlayDateUITests.swift */; };
 		07DD76132730288600EFBC9B /* PlayDateUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DD76122730288600EFBC9B /* PlayDateUITestsLaunchTests.swift */; };
 		1ABCB944165A8B69C4FCC9FF /* Pods_PlayDateTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AE0AC1838809481C2F79876 /* Pods_PlayDateTests.framework */; };
+		4C2C2F48273A285F00123D5A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4C2C2F47273A285F00123D5A /* GoogleService-Info.plist */; };
 		64472968209DD489FE43E942 /* Pods_PlayDate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17E7010EC0AC3C8EF8740561 /* Pods_PlayDate.framework */; };
 		D9BBB99A34F260A9A52EACB1 /* Pods_PlayDate_PlayDateUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1A8195EAD6F67B359547CEE /* Pods_PlayDate_PlayDateUITests.framework */; };
 /* End PBXBuildFile section */
@@ -67,7 +63,7 @@
 		07C54B10273A0F3B004C0742 /* PetRegister.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetRegister.swift; sourceTree = "<group>"; };
 		07C54B12273A0F73004C0742 /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
 		07C54B14273A0F81004C0742 /* UserRegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRegisterViewController.swift; sourceTree = "<group>"; };
-		07C54B16273A0F8B004C0742 /* PetRegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetRegisterViewController.swift; sourceTree = "<group>"; };
+		07C54B16273A0F8B004C0742 /* PetProfileSetupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetProfileSetupViewController.swift; sourceTree = "<group>"; };
 		07C54B18273A0FA7004C0742 /* MainLaunchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainLaunchViewController.swift; sourceTree = "<group>"; };
 		07C54B1B273A0FDE004C0742 /* MatchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchTableViewCell.swift; sourceTree = "<group>"; };
 		07C54B1D273A1007004C0742 /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
@@ -87,6 +83,7 @@
 		07DD76102730288600EFBC9B /* PlayDateUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayDateUITests.swift; sourceTree = "<group>"; };
 		07DD76122730288600EFBC9B /* PlayDateUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayDateUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		17E7010EC0AC3C8EF8740561 /* Pods_PlayDate.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PlayDate.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4C2C2F47273A285F00123D5A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		623AD1832D0518C662B401B3 /* Pods-PlayDate.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PlayDate.release.xcconfig"; path = "Target Support Files/Pods-PlayDate/Pods-PlayDate.release.xcconfig"; sourceTree = "<group>"; };
 		8AE0AC1838809481C2F79876 /* Pods_PlayDateTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PlayDateTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ADD0321EBF9FE8EF4E78C169 /* Pods-PlayDateTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PlayDateTests.debug.xcconfig"; path = "Target Support Files/Pods-PlayDateTests/Pods-PlayDateTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -156,7 +153,7 @@
 			children = (
 				07C54B12273A0F73004C0742 /* FeedViewController.swift */,
 				07C54B14273A0F81004C0742 /* UserRegisterViewController.swift */,
-				07C54B16273A0F8B004C0742 /* PetRegisterViewController.swift */,
+				07C54B16273A0F8B004C0742 /* PetProfileSetupViewController.swift */,
 				07C54B18273A0FA7004C0742 /* MainLaunchViewController.swift */,
 				07D4B3BE273B3D73008A2E77 /* LoginViewController.swift */,
 			);
@@ -187,7 +184,6 @@
 		07DD75E02730288200EFBC9B = {
 			isa = PBXGroup;
 			children = (
-				07D90C32273716EA0049D3A3 /* GoogleService-Info.plist */,
 				07DD75EB2730288200EFBC9B /* PlayDate */,
 				07DD76052730288600EFBC9B /* PlayDateTests */,
 				07DD760F2730288600EFBC9B /* PlayDateUITests */,
@@ -210,6 +206,7 @@
 		07DD75EB2730288200EFBC9B /* PlayDate */ = {
 			isa = PBXGroup;
 			children = (
+				4C2C2F47273A285F00123D5A /* GoogleService-Info.plist */,
 				07C4DA382731914500B36C49 /* Utilities */,
 				07C4DA3A2731916F00B36C49 /* Models */,
 				07C4DA3C273191A200B36C49 /* ViewModels */,
@@ -375,8 +372,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				07DD75FC2730288500EFBC9B /* LaunchScreen.storyboard in Resources */,
-				07D90C33273716EA0049D3A3 /* GoogleService-Info.plist in Resources */,
 				07DD75F92730288500EFBC9B /* Assets.xcassets in Resources */,
+				4C2C2F48273A285F00123D5A /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -384,7 +381,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				07D90C34273716EA0049D3A3 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -392,7 +388,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				07D90C35273716EA0049D3A3 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -519,7 +514,7 @@
 				07D4B3C1273B551F008A2E77 /* OnboardingTextField.swift in Sources */,
 				07DD75F72730288200EFBC9B /* PlayDate.xcdatamodeld in Sources */,
 				07DD75ED2730288200EFBC9B /* AppDelegate.swift in Sources */,
-				07C54B17273A0F8B004C0742 /* PetRegisterViewController.swift in Sources */,
+				07C54B17273A0F8B004C0742 /* PetProfileSetupViewController.swift in Sources */,
 				07C54B0F273A0F27004C0742 /* Launch.swift in Sources */,
 				07C54B13273A0F73004C0742 /* FeedViewController.swift in Sources */,
 				07C54B19273A0FA7004C0742 /* MainLaunchViewController.swift in Sources */,
