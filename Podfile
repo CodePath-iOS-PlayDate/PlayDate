@@ -7,6 +7,8 @@ target 'PlayDate' do
 
   # Pods for PlayDate
   pod 'Firebase/Analytics'
+  pod 'Firebase/Auth'
+  pod 'Firebase/Core'
 
   target 'PlayDateTests' do
     inherit! :search_paths
