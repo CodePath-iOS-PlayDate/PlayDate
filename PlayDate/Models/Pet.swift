@@ -8,5 +8,10 @@
 import UIKit
 
 struct Pet {
-    
+    let petId: Int
+    let name: String
+    let bio: String
+    let type: String
+    let sex: String
+    let age: String
 }

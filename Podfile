@@ -6,6 +6,7 @@ target 'PlayDate' do
   use_frameworks!
 
   # Pods for PlayDate
+  pod 'GoogleUtilities/Environment'
   pod 'Firebase/Analytics'
   pod 'Firebase/Auth'
   pod 'Firebase/Core'

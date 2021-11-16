@@ -21,8 +21,6 @@ class UserRegisterViewController: UIViewController {
         return label
     }()
     
-    
-    
     private let emailField: UITextField = {
         let field = UITextField()
         field.placeholder = "Email Address"
@@ -67,6 +65,7 @@ class UserRegisterViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = .systemBackground
         view.addSubview(registerLabel)
         view.addSubview(emailField)
         view.addSubview(passField)

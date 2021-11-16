@@ -28,7 +28,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let main = MainLaunchViewController()
         let logoImage = UIImage(named: "LogoMedium")
         main.logoImage = logoImage
-        window?.rootViewController = main
+        
+        let navVC = UINavigationController(rootViewController: main)
+        window?.rootViewController = navVC
         
         return true
     }

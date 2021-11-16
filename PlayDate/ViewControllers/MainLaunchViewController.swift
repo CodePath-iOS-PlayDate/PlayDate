@@ -60,6 +60,7 @@ class MainLaunchViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = .systemBackground
         initView()
     }
     
@@ -80,16 +81,28 @@ class MainLaunchViewController: UIViewController {
         verticalStackView.addArrangedSubview(logoImageView)
         
         // Login Button
+        loginButton.addTarget(self, action: #selector(navToLogin(_:)), for: .touchUpInside)
         loginButton.setContentHuggingPriority(.required, for: .vertical)
         verticalStackView.addArrangedSubview(loginButton)
         loginButton.translatesAutoresizingMaskIntoConstraints = false
         loginButton.widthAnchor.constraint(equalTo: verticalStackView.widthAnchor).isActive = true
         
         // Register Button
+        registerButton.addTarget(self, action: #selector(navToRegister(_:)), for: .touchUpInside)
         registerButton.setContentHuggingPriority(.required, for: .vertical)
         verticalStackView.addArrangedSubview(registerButton)
         registerButton.translatesAutoresizingMaskIntoConstraints = false
         registerButton.widthAnchor.constraint(equalTo: verticalStackView.widthAnchor).isActive = true
         registerButton.heightAnchor.constraint(equalTo: loginButton.heightAnchor).isActive = true
+    }
+    
+    @objc func navToLogin(_ sender: UIButton) {
+        let loginVC = LoginViewController()
+        self.navigationController?.show(loginVC, sender: self)
+    }
+    
+    @objc func navToRegister(_ sender: UIButton) {
+        let registerVC = UserRegisterViewController()
+        self.navigationController?.pushViewController(registerVC, animated: true)
     }
 }
