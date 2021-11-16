@@ -13,4 +13,5 @@ struct Pet {
     let bio: String
     let type: String
     let sex: String
+    let age: String
 }
