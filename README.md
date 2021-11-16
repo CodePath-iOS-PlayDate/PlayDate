@@ -28,8 +28,8 @@ An app for setting up play-dates with fellow pet owners.
 
 **Required Must-have Stories**
 
-* User can create an account
-* User can login
+[x] User can create an account
+[x] User can login
 * Users can stay logged in between restarts
 * Users can upload pictures to their profile
 * Users can add their pet name, type, and age to their profile
