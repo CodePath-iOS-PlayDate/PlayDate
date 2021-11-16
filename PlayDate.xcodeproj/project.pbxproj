@@ -140,8 +140,6 @@
 		07C4DA392731915D00B36C49 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				07C54B1A273A0FB2004C0742 /* Cells */,
-				07D4B3C0273B551F008A2E77 /* OnboardingTextField.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -149,8 +147,6 @@
 		07C4DA3A2731916F00B36C49 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				07C54B02273A0E7F004C0742 /* User.swift */,
-				07C54B04273A0E9B004C0742 /* Pet.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -170,22 +166,8 @@
 		07C4DA3C273191A200B36C49 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
-				07C54B06273A0EB5004C0742 /* UserProfile.swift */,
-				07C54B08273A0EBE004C0742 /* PetProfile.swift */,
-				07C54B0A273A0F12004C0742 /* Login.swift */,
-				07C54B0C273A0F1F004C0742 /* UserRegister.swift */,
-				07C54B10273A0F3B004C0742 /* PetRegister.swift */,
-				07C54B0E273A0F27004C0742 /* Launch.swift */,
 			);
 			path = ViewModels;
-			sourceTree = "<group>";
-		};
-		07C54B1A273A0FB2004C0742 /* Cells */ = {
-			isa = PBXGroup;
-			children = (
-				07C54B1B273A0FDE004C0742 /* MatchTableViewCell.swift */,
-			);
-			path = Cells;
 			sourceTree = "<group>";
 		};
 		07DD75E02730288200EFBC9B = {
@@ -508,17 +490,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				07C54B09273A0EBE004C0742 /* PetProfile.swift in Sources */,
-				07C54B05273A0E9B004C0742 /* Pet.swift in Sources */,
-				07C54B03273A0E7F004C0742 /* User.swift in Sources */,
-				07C54B1C273A0FDE004C0742 /* MatchTableViewCell.swift in Sources */,
-				07C54B0D273A0F1F004C0742 /* UserRegister.swift in Sources */,
-				07C54B11273A0F3B004C0742 /* PetRegister.swift in Sources */,
-				07C54B07273A0EB5004C0742 /* UserProfile.swift in Sources */,
-				07C54B1E273A1007004C0742 /* AuthManager.swift in Sources */,
 				07DD75F12730288200EFBC9B /* ViewController.swift in Sources */,
-				07D4B3BF273B3D73008A2E77 /* LoginViewController.swift in Sources */,
-				07D4B3C1273B551F008A2E77 /* OnboardingTextField.swift in Sources */,
 				07DD75F72730288200EFBC9B /* PlayDate.xcdatamodeld in Sources */,
 				07DD75ED2730288200EFBC9B /* AppDelegate.swift in Sources */,
 				07C54B17273A0F8B004C0742 /* PetProfileSetupViewController.swift in Sources */,
