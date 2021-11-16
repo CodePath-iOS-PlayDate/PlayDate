@@ -28,24 +28,24 @@ An app for setting up play-dates with fellow pet owners.
 
 **Required Must-have Stories**
 
-[x] User can create an account
-[x] User can login
-* Users can stay logged in between restarts
-* Users can upload pictures to their profile
-* Users can add their pet name, type, and age to their profile
-* Users can create a biography in their profile
-* Users can add external contact information to their profile to send to matches
-* Users can swipe left to reject a potential match
-* Users can swipe right to accept a potential match
-* Users can see contact information within their matches' profiles
+- [x] User can create an account
+- [x] User can login
+- [ ] Users can stay logged in between restarts
+- [ ] Users can upload pictures to their profile
+- [ ] Users can add their pet name, type, and age to their profile
+- [ ] Users can create a biography in their profile
+- [ ] Users can add external contact information to their profile to send to matches
+- [ ] Users can swipe left to reject a potential match
+- [ ] Users can swipe right to accept a potential match
+- [ ] Users can see contact information within their matches' profiles
 
 **Optional Nice-to-have Stories**
 
-* Users can see profiles within a certain area by using the GPS
-* Chat system between matched users
-* Favorite list of matches
-* Notification System
-* Owner can have multiple pets
+- [ ] Users can see profiles within a certain area by using the GPS
+- [ ] Chat system between matched users
+- [ ] Favorite list of matches
+- [ ] Notification System
+- [ ] Owner can have multiple pets
 
 ### 2. Screen Archetypes
 
