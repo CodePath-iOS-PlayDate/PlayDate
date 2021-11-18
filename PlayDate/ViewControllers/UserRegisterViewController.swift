@@ -12,103 +12,71 @@ import FirebaseAuth
 // Will make pretty soon!
 class UserRegisterViewController: UIViewController {
     
+    private let stackView: UIStackView = {
+        let stackView = UIStackView()
+        stackView.alignment = .center
+        stackView.axis = .vertical
+        stackView.distribution = .fillProportionally
+        stackView.spacing = 27
+        return stackView
+    }()
+    
+    private let logoImageView: UIImageView = {
+        let imageView = UIImageView()
+        imageView.contentMode = .scaleAspectFit
+        return imageView
+    }()
     
     private let registerLabel : UILabel = {
         let label = UILabel()
         label.textAlignment = .center
         label.text = "Register"
-        label.font = .systemFont(ofSize: 24, weight: .semibold)
+        label.font = .systemFont(ofSize: 36, weight: .semibold)
         return label
     }()
     
-    private let emailField: UITextField = {
-        let field = UITextField()
+    private let emailField: OnboardingTextField = {
+        let field = OnboardingTextField()
         field.placeholder = "Email Address"
-        field.layer.borderWidth = 1
         return field
     }()
     
-    private let passField: UITextField = {
-        let field = UITextField()
+    private let passField: OnboardingTextField = {
+        let field = OnboardingTextField()
         field.placeholder = "Password"
-        field.layer.borderWidth = 1
-        field.layer.borderColor = UIColor.black.cgColor
         field.isSecureTextEntry = true
         return field
     }()
     
-    private let pass2Field: UITextField = {
-        let field = UITextField()
+    private let pass2Field: OnboardingTextField = {
+        let field = OnboardingTextField()
         field.placeholder = "Confirm Password"
-        field.layer.borderWidth = 1
-        field.layer.borderColor = UIColor.black.cgColor
         field.isSecureTextEntry = true
         return field
-    }()
-    
-    private let errorLabel: UILabel = {
-        let label = UILabel()
-        label.font = UIFont.systemFont(ofSize: 17)
-        label.textColor = UIColor.red
-        label.layer.borderWidth = 0
-        label.isHidden = true
-        return label
     }()
     
     private let confirmButton: UIButton = {
-        let button = UIButton()
-        button.backgroundColor = .cyan
-        button.setTitleColor(.white, for: .normal)
-        button.setTitle("Confirm Email", for: .normal)
-        return button
+        var config = UIButton.Configuration.filled()
+        config.buttonSize = .large
+        
+        var container = AttributeContainer()
+        container.font = .systemFont(ofSize: 36, weight: .medium)
+        config.attributedTitle = AttributedString("Register", attributes: container)
+        
+        var action = UIAction() { _ in
+            print("Going to Regsiter VC")
+        }
+        
+        return UIButton(configuration: config, primaryAction: action)
     }()
+    
+    var logoImage: UIImage?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
-        view.addSubview(registerLabel)
-        view.addSubview(emailField)
-        view.addSubview(passField)
-        view.addSubview(pass2Field)
-        view.addSubview(errorLabel)
-        view.addSubview(confirmButton)
-        // Do any additional setup after loading the view.
-        confirmButton.addTarget(self, action: #selector(didTapButton), for: .touchUpInside)
-    }
-    
-    
-    override func viewDidLayoutSubviews(){
-        super.viewDidLayoutSubviews()
-        
-        registerLabel.frame = CGRect(x: 20,
-                                     y: 200,
-                                     width: view.frame.size.width,
-                                     height: 80)
-        
-        passField.frame = CGRect(x: 20,
-                                 y: 350,//emailField.frame.origin.y + emailField.frame.size.height+10
-                                 width: view.frame.size.width-40,
-                                 height: 50)
-        
-        pass2Field.frame = CGRect(x: 20,
-                                  y: passField.frame.origin.y + passField.frame.size.height+10,
-                                  width: view.frame.size.width-40,
-                                  height: 50)
-        
-        emailField.frame = CGRect(x: 20,
-                                  y: registerLabel.frame.origin.y + registerLabel.frame.size.height+10,
-                                  width: view.frame.size.width-40,
-                                  height: 50)
-        
-        errorLabel.frame = CGRect(x: 20,
-                                  y: pass2Field.frame.origin.y + pass2Field.frame.size.height+10,
-                                  width: view.frame.size.width-40,
-                                  height: 40)
-        
-        confirmButton.frame = CGRect(x: 20,
-                                     y: errorLabel.frame.origin.y + errorLabel.frame.size.height+10,
-                                     width: view.frame.size.width-40,
-                                     height: 80)
+        hidesKeyboard()
+        initView()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -116,22 +84,77 @@ class UserRegisterViewController: UIViewController {
         emailField.becomeFirstResponder()
     }
     
+    private func initView() {
+        // Stack View
+        view.addSubview(stackView)
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            stackView.heightAnchor.constraint(equalToConstant: view.bounds.height / 2),
+            stackView.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+            stackView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            stackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 26),
+            stackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -26),
+        ])
+        
+        // Logo Image
+        logoImageView.image = logoImage
+        stackView.addArrangedSubview(logoImageView)
+        
+        // Email Field
+        emailField.setContentHuggingPriority(.required, for: .vertical)
+        emailField.setContentCompressionResistancePriority(.required, for: .vertical)
+        stackView.addArrangedSubview(emailField)
+        emailField.widthAnchor.constraint(equalTo: stackView.widthAnchor).isActive = true
+        
+        // Password Field
+        passField.setContentHuggingPriority(.required, for: .vertical)
+        passField.setContentCompressionResistancePriority(.required, for: .vertical)
+        stackView.addArrangedSubview(passField)
+        passField.widthAnchor.constraint(equalTo: stackView.widthAnchor).isActive = true
+        
+        // Confirm Password Field
+        pass2Field.setContentHuggingPriority(.required, for: .vertical)
+        pass2Field.setContentCompressionResistancePriority(.required, for: .vertical)
+        stackView.addArrangedSubview(pass2Field)
+        pass2Field.widthAnchor.constraint(equalTo: stackView.widthAnchor).isActive = true
+        
+        // Confirm Button
+        confirmButton.setContentHuggingPriority(.required, for: .vertical)
+        confirmButton.setContentCompressionResistancePriority(.required, for: .vertical)
+        stackView.addArrangedSubview(confirmButton)
+        confirmButton.translatesAutoresizingMaskIntoConstraints = false
+        confirmButton.widthAnchor.constraint(equalTo: stackView.widthAnchor).isActive = true
+        confirmButton.addTarget(self, action: #selector(didTapButton), for: .touchUpInside)
+    }
+    
+    func hidesKeyboard() {
+        let tap = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+        tap.cancelsTouchesInView = false
+        view.addGestureRecognizer(tap)
+    }
+    
+    // MARK: Selectors
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
+    }
     
     @objc private func didTapButton() {
         
         // F
         print("button works")
         guard let email = emailField.text, !email.isEmpty,
-              let password = passField.text, !password.isEmpty  else{
+              let password = passField.text, !password.isEmpty else {
                   // Missing field condition
-                  errorLabel.text = "Missing field data"
-                  errorLabel.isHidden = false
+                  let alert = UIAlertController(title: "Oops!", message: "Looks like you left some data unfilled. Please fill before continuing.", preferredStyle: .alert)
+                  alert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: nil))
+                  self.present(alert, animated: true)
                   return
               }
         if password != pass2Field.text{
             //matching passwords condition
-            errorLabel.text = "Ey! Your passwords don't match."
-            errorLabel.isHidden = false
+            let alert = UIAlertController(title: "Oops!", message: "Looks like your passwords do not match. Please try again.", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: nil))
+            self.present(alert, animated: true)
             return
         }
         
@@ -143,26 +166,18 @@ class UserRegisterViewController: UIViewController {
         let auth = AuthManager.init(email:email, password: password)
         
         //FIreBase API call!
-        auth.register(){[weak self](success) in
+        auth.register() { [weak self] (success) in
             guard let strongSelf = self else{
                 return
             }
             
             if success {
-                
                 // Success condition goes here
                 //
                 // Currently just hides UI elements. We'll
                 // probably want to do something else, and
                 // that'll go here.
-                //
                 print("Big man tings dis. In other words, account created")
-                strongSelf.registerLabel.isHidden = true
-                strongSelf.emailField.isHidden = true
-                strongSelf.passField.isHidden = true
-                strongSelf.pass2Field.isHidden = true
-                strongSelf.errorLabel.isHidden = true
-                strongSelf.confirmButton.isHidden = true
             } else {
                 // Need additional error labels for
                 // other failure conditions.
@@ -173,16 +188,12 @@ class UserRegisterViewController: UIViewController {
                 //
                 // Addidtionaly, we may need to check for
                 // valid passwords(no 'password123' paswords).
-                strongSelf.errorLabel.text = "email exists, noob"
-                strongSelf.errorLabel.isHidden = false
-                
+                let alert = UIAlertController(title: "Oops!", message: "Looks like this email already exists. Please try again.", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: nil))
+                strongSelf.present(alert, animated: true)
             }
         }
-        
-    
     }
-    
-   
 }
 
 

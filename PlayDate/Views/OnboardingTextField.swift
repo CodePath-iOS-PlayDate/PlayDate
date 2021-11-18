@@ -14,6 +14,21 @@ class OnboardingTextField: UITextField {
         bottom: 15,
         right: 15
     )
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        setup()
+    }
+    
+    required public init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        setup()
+    }
+    
+    private func setup() {
+        self.borderStyle = .roundedRect
+        self.translatesAutoresizingMaskIntoConstraints = false
+    }
 
     override func textRect(forBounds bounds: CGRect) -> CGRect {
         let rect = super.textRect(forBounds: bounds)

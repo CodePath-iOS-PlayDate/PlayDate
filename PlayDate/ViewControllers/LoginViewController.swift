@@ -27,18 +27,14 @@ class LoginViewController: UIViewController {
     
     let emailTextField: OnboardingTextField = {
         let textField = OnboardingTextField()
-        textField.borderStyle = .roundedRect
         textField.placeholder = "Email"
-        textField.translatesAutoresizingMaskIntoConstraints = false
         return textField
     }()
     
     let passwordTextField: OnboardingTextField = {
         let textField = OnboardingTextField()
-        textField.borderStyle = .roundedRect
         textField.placeholder = "Password"
         textField.isSecureTextEntry = true
-        textField.translatesAutoresizingMaskIntoConstraints = false
         return textField
     }()
     
@@ -48,7 +44,7 @@ class LoginViewController: UIViewController {
         
         var container = AttributeContainer()
         container.font = .systemFont(ofSize: 36, weight: .medium)
-        config.attributedTitle = AttributedString("Register", attributes: container)
+        config.attributedTitle = AttributedString("Login", attributes: container)
 
         var action = UIAction() { _ in
             print("Going to Account Onboarding")
@@ -74,6 +70,11 @@ class LoginViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
         initView()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        emailTextField.becomeFirstResponder()
     }
     
     func initView() {

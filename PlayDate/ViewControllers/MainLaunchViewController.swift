@@ -98,11 +98,13 @@ class MainLaunchViewController: UIViewController {
     
     @objc func navToLogin(_ sender: UIButton) {
         let loginVC = LoginViewController()
+        loginVC.logoImage = UIImage(named: "LogoMedium")
         self.navigationController?.show(loginVC, sender: self)
     }
     
     @objc func navToRegister(_ sender: UIButton) {
         let registerVC = UserRegisterViewController()
+        registerVC.logoImage = UIImage(named: "LogoMedium")
         self.navigationController?.pushViewController(registerVC, animated: true)
     }
 }
