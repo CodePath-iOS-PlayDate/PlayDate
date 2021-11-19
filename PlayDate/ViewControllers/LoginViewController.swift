@@ -74,6 +74,7 @@ class LoginViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
         initView()
+        hideKeyboard()
     }
     
     func initView() {
@@ -123,5 +124,15 @@ class LoginViewController: UIViewController {
     
     @objc func labelTapped(_ sender: UITapGestureRecognizer) {
         print("Need to nav to register vc")
+    }
+    
+    func hideKeyboard() {
+        let tap:UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+        tap.cancelsTouchesInView = false
+        view.addGestureRecognizer(tap)
+    }
+    
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
     }
 }

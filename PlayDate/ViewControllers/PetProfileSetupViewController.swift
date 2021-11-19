@@ -92,7 +92,7 @@ class PetProfileSetupViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
         initView()
-        
+        hideKeyboard()
     }
     
     // Properties
@@ -146,6 +146,13 @@ class PetProfileSetupViewController: UIViewController {
         
     }
     
+    func hideKeyboard() {
+        let tap:UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+        tap.cancelsTouchesInView = false
+        view.addGestureRecognizer(tap)
+    }
     
-
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
+    }
 }

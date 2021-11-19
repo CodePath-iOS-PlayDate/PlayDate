@@ -14,34 +14,37 @@ class UserRegisterViewController: UIViewController {
     
     
     private let registerLabel : UILabel = {
-        let label = UILabel()
+        let label = UILabel(frame: CGRect(x: 0, y: 0, width: 100.0, height: 200.0))
         label.textAlignment = .center
+        label.backgroundColor = .white
+        label.textColor = .purple
         label.text = "Register"
-        label.font = .systemFont(ofSize: 24, weight: .semibold)
+        label.font = UIFont.boldSystemFont(ofSize: 50.0)
         return label
     }()
     
     private let emailField: UITextField = {
-        let field = UITextField()
+        let field = UITextField(frame: CGRect(x: 20, y: 320, width: 300.0, height: 30.0))
         field.placeholder = "Email Address"
-        field.layer.borderWidth = 1
+        field.borderStyle = .roundedRect
+        field.translatesAutoresizingMaskIntoConstraints = false
         return field
     }()
     
     private let passField: UITextField = {
-        let field = UITextField()
+        let field = UITextField(frame: CGRect(x: 20, y: 360, width: 300.0, height: 30.0))
         field.placeholder = "Password"
-        field.layer.borderWidth = 1
-        field.layer.borderColor = UIColor.black.cgColor
+        field.borderStyle = .roundedRect
+        field.translatesAutoresizingMaskIntoConstraints = false
         field.isSecureTextEntry = true
         return field
     }()
     
     private let pass2Field: UITextField = {
-        let field = UITextField()
-        field.placeholder = "Confirm Password"
-        field.layer.borderWidth = 1
-        field.layer.borderColor = UIColor.black.cgColor
+        let field = UITextField(frame: CGRect(x: 20, y: 400, width: 300.0, height: 30.0))
+        field.placeholder = "Repeat Password"
+        field.borderStyle = .roundedRect
+        field.translatesAutoresizingMaskIntoConstraints = false
         field.isSecureTextEntry = true
         return field
     }()
@@ -56,11 +59,17 @@ class UserRegisterViewController: UIViewController {
     }()
     
     private let confirmButton: UIButton = {
-        let button = UIButton()
-        button.backgroundColor = .cyan
-        button.setTitleColor(.white, for: .normal)
-        button.setTitle("Confirm Email", for: .normal)
-        return button
+        var config = UIButton.Configuration.filled()
+        config.buttonSize = .medium
+        
+        var container = AttributeContainer()
+        container.font = .systemFont(ofSize: 36, weight: .medium)
+        config.attributedTitle = AttributedString("Confirm Email", attributes: container)
+        
+        var action = UIAction() { _ in
+            print("Register button pressed")
+        }
+        return UIButton(configuration: config, primaryAction: action)
     }()
     
     override func viewDidLoad() {
@@ -74,13 +83,14 @@ class UserRegisterViewController: UIViewController {
         view.addSubview(confirmButton)
         // Do any additional setup after loading the view.
         confirmButton.addTarget(self, action: #selector(didTapButton), for: .touchUpInside)
+        hideKeyboard()
     }
     
     
     override func viewDidLayoutSubviews(){
         super.viewDidLayoutSubviews()
         
-        registerLabel.frame = CGRect(x: 20,
+        registerLabel.frame = CGRect(x: 0,
                                      y: 200,
                                      width: view.frame.size.width,
                                      height: 80)
@@ -182,7 +192,16 @@ class UserRegisterViewController: UIViewController {
     
     }
     
-   
+    func hideKeyboard() {
+        let tap:UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+        tap.cancelsTouchesInView = false
+        view.addGestureRecognizer(tap)
+    }
+    
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
+    }
+    
 }
 
 
