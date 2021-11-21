@@ -21,7 +21,7 @@ class HomeTabBarController: UITabBarController, UITabBarControllerDelegate {
     
         let item1 = UINavigationController(rootViewController: FeedViewController())
         let item2 = UINavigationController(rootViewController: MatchListViewController())
-        let item3 = UINavigationController(rootViewController: ProfileViewController())
+        let item3 = UINavigationController(rootViewController: UserProfileViewController())
         
         let icon1 = UITabBarItem(title: "Feed", image: UIImage(named: "feed.png"), selectedImage: UIImage(named: "feed-selected.png"))
         let icon2 = UITabBarItem(title: "Matches", image: UIImage(named: "matches.png"), selectedImage: UIImage(named: "matches-selected.png"))

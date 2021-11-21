@@ -32,8 +32,9 @@
 		07DD76072730288600EFBC9B /* PlayDateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DD76062730288600EFBC9B /* PlayDateTests.swift */; };
 		07DD76112730288600EFBC9B /* PlayDateUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DD76102730288600EFBC9B /* PlayDateUITests.swift */; };
 		07DD76132730288600EFBC9B /* PlayDateUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DD76122730288600EFBC9B /* PlayDateUITestsLaunchTests.swift */; };
+		07FABF4E274A9B3100EBE839 /* UserProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07FABF4D274A9B3100EBE839 /* UserProfileViewController.swift */; };
+		07FABF51274A9D2400EBE839 /* UserProfileHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07FABF50274A9D2400EBE839 /* UserProfileHeaderCell.swift */; };
 		1ABCB944165A8B69C4FCC9FF /* Pods_PlayDateTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AE0AC1838809481C2F79876 /* Pods_PlayDateTests.framework */; };
-		2FED8F91274AFAF400D7292A /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FED8F90274AFAF400D7292A /* ProfileViewController.swift */; };
 		2FED8F93274AFDCB00D7292A /* HomeTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FED8F92274AFDCA00D7292A /* HomeTabBarController.swift */; };
 		4C2C2F48273A285F00123D5A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4C2C2F47273A285F00123D5A /* GoogleService-Info.plist */; };
 		4C2C2F502745B5C400123D5A /* MatchListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C2C2F4F2745B5C400123D5A /* MatchListViewController.swift */; };
@@ -88,8 +89,9 @@
 		07DD760C2730288600EFBC9B /* PlayDateUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PlayDateUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		07DD76102730288600EFBC9B /* PlayDateUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayDateUITests.swift; sourceTree = "<group>"; };
 		07DD76122730288600EFBC9B /* PlayDateUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayDateUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		07FABF4D274A9B3100EBE839 /* UserProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileViewController.swift; sourceTree = "<group>"; };
+		07FABF50274A9D2400EBE839 /* UserProfileHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileHeaderCell.swift; sourceTree = "<group>"; };
 		17E7010EC0AC3C8EF8740561 /* Pods_PlayDate.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PlayDate.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		2FED8F90274AFAF400D7292A /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		2FED8F92274AFDCA00D7292A /* HomeTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTabBarController.swift; sourceTree = "<group>"; };
 		4C2C2F47273A285F00123D5A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		4C2C2F4F2745B5C400123D5A /* MatchListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchListViewController.swift; sourceTree = "<group>"; };
@@ -143,6 +145,7 @@
 		07C4DA392731915D00B36C49 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				07FABF4F274A9CFB00EBE839 /* UserProfileCells */,
 				07C54B1A273A0FB2004C0742 /* Cells */,
 				07DD15E52743712100E4D3BE /* OnboardingTextField.swift */,
 			);
@@ -167,8 +170,8 @@
 				07C54B18273A0FA7004C0742 /* MainLaunchViewController.swift */,
 				07DD15E3274370FC00E4D3BE /* LoginViewController.swift */,
 				4C2C2F4F2745B5C400123D5A /* MatchListViewController.swift */,
-				2FED8F90274AFAF400D7292A /* ProfileViewController.swift */,
 				2FED8F92274AFDCA00D7292A /* HomeTabBarController.swift */,
+				07FABF4D274A9B3100EBE839 /* UserProfileViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -250,6 +253,14 @@
 				07DD76122730288600EFBC9B /* PlayDateUITestsLaunchTests.swift */,
 			);
 			path = PlayDateUITests;
+			sourceTree = "<group>";
+		};
+		07FABF4F274A9CFB00EBE839 /* UserProfileCells */ = {
+			isa = PBXGroup;
+			children = (
+				07FABF50274A9D2400EBE839 /* UserProfileHeaderCell.swift */,
+			);
+			path = UserProfileCells;
 			sourceTree = "<group>";
 		};
 		8431655563AEF1657BF6BC31 /* Pods */ = {
@@ -523,6 +534,7 @@
 				07C54B0D273A0F1F004C0742 /* UserRegister.swift in Sources */,
 				07C54B11273A0F3B004C0742 /* PetRegister.swift in Sources */,
 				07C54B07273A0EB5004C0742 /* UserProfile.swift in Sources */,
+				07FABF51274A9D2400EBE839 /* UserProfileHeaderCell.swift in Sources */,
 				07C54B1E273A1007004C0742 /* AuthManager.swift in Sources */,
 				2FED8F93274AFDCB00D7292A /* HomeTabBarController.swift in Sources */,
 				07DD75F12730288200EFBC9B /* ViewController.swift in Sources */,
@@ -530,9 +542,9 @@
 				07DD75ED2730288200EFBC9B /* AppDelegate.swift in Sources */,
 				07C54B17273A0F8B004C0742 /* PetProfileSetupViewController.swift in Sources */,
 				4C2C2F502745B5C400123D5A /* MatchListViewController.swift in Sources */,
-				2FED8F91274AFAF400D7292A /* ProfileViewController.swift in Sources */,
 				07C54B0F273A0F27004C0742 /* Launch.swift in Sources */,
 				07C54B13273A0F73004C0742 /* FeedViewController.swift in Sources */,
+				07FABF4E274A9B3100EBE839 /* UserProfileViewController.swift in Sources */,
 				07C54B19273A0FA7004C0742 /* MainLaunchViewController.swift in Sources */,
 				07C54B15273A0F81004C0742 /* UserRegisterViewController.swift in Sources */,
 				07C54B0B273A0F12004C0742 /* Login.swift in Sources */,
