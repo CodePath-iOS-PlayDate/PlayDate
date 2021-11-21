@@ -33,6 +33,8 @@
 		07DD76112730288600EFBC9B /* PlayDateUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DD76102730288600EFBC9B /* PlayDateUITests.swift */; };
 		07DD76132730288600EFBC9B /* PlayDateUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DD76122730288600EFBC9B /* PlayDateUITestsLaunchTests.swift */; };
 		1ABCB944165A8B69C4FCC9FF /* Pods_PlayDateTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AE0AC1838809481C2F79876 /* Pods_PlayDateTests.framework */; };
+		2FED8F91274AFAF400D7292A /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FED8F90274AFAF400D7292A /* ProfileViewController.swift */; };
+		2FED8F93274AFDCB00D7292A /* HomeTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FED8F92274AFDCA00D7292A /* HomeTabBarController.swift */; };
 		4C2C2F48273A285F00123D5A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4C2C2F47273A285F00123D5A /* GoogleService-Info.plist */; };
 		4C2C2F502745B5C400123D5A /* MatchListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C2C2F4F2745B5C400123D5A /* MatchListViewController.swift */; };
 		64472968209DD489FE43E942 /* Pods_PlayDate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17E7010EC0AC3C8EF8740561 /* Pods_PlayDate.framework */; };
@@ -87,6 +89,8 @@
 		07DD76102730288600EFBC9B /* PlayDateUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayDateUITests.swift; sourceTree = "<group>"; };
 		07DD76122730288600EFBC9B /* PlayDateUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayDateUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		17E7010EC0AC3C8EF8740561 /* Pods_PlayDate.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PlayDate.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2FED8F90274AFAF400D7292A /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		2FED8F92274AFDCA00D7292A /* HomeTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTabBarController.swift; sourceTree = "<group>"; };
 		4C2C2F47273A285F00123D5A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		4C2C2F4F2745B5C400123D5A /* MatchListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchListViewController.swift; sourceTree = "<group>"; };
 		623AD1832D0518C662B401B3 /* Pods-PlayDate.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PlayDate.release.xcconfig"; path = "Target Support Files/Pods-PlayDate/Pods-PlayDate.release.xcconfig"; sourceTree = "<group>"; };
@@ -163,6 +167,8 @@
 				07C54B18273A0FA7004C0742 /* MainLaunchViewController.swift */,
 				07DD15E3274370FC00E4D3BE /* LoginViewController.swift */,
 				4C2C2F4F2745B5C400123D5A /* MatchListViewController.swift */,
+				2FED8F90274AFAF400D7292A /* ProfileViewController.swift */,
+				2FED8F92274AFDCA00D7292A /* HomeTabBarController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -518,11 +524,13 @@
 				07C54B11273A0F3B004C0742 /* PetRegister.swift in Sources */,
 				07C54B07273A0EB5004C0742 /* UserProfile.swift in Sources */,
 				07C54B1E273A1007004C0742 /* AuthManager.swift in Sources */,
+				2FED8F93274AFDCB00D7292A /* HomeTabBarController.swift in Sources */,
 				07DD75F12730288200EFBC9B /* ViewController.swift in Sources */,
 				07DD75F72730288200EFBC9B /* PlayDate.xcdatamodeld in Sources */,
 				07DD75ED2730288200EFBC9B /* AppDelegate.swift in Sources */,
 				07C54B17273A0F8B004C0742 /* PetProfileSetupViewController.swift in Sources */,
 				4C2C2F502745B5C400123D5A /* MatchListViewController.swift in Sources */,
+				2FED8F91274AFAF400D7292A /* ProfileViewController.swift in Sources */,
 				07C54B0F273A0F27004C0742 /* Launch.swift in Sources */,
 				07C54B13273A0F73004C0742 /* FeedViewController.swift in Sources */,
 				07C54B19273A0FA7004C0742 /* MainLaunchViewController.swift in Sources */,

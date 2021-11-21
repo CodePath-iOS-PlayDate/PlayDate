@@ -1,18 +1,17 @@
 //
-//  FeedViewController.swift
+//  ProfileViewController.swift
 //  PlayDate
 //
-//  Created by Denielle Abaquita on 11/8/21.
+//  Created by Gustavo Cornejo on 11/21/21.
 //
 
 import UIKit
 
-class FeedViewController: UIViewController {
+class ProfileViewController: UIViewController {
 
     override func viewDidLoad() {
-        
         super.viewDidLoad()
-        title = "Feed"
+        title = "Profile"
         // Do any additional setup after loading the view.
     }
     

@@ -20,6 +20,7 @@ class MatchListViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        title = "Matches"
         tableView.dataSource = self
         tableView.delegate = self
         view.addSubview(tableView)
