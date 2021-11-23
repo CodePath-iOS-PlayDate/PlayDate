@@ -177,6 +177,7 @@ class UserRegisterViewController: UIViewController {
                 // Currently just hides UI elements. We'll
                 // probably want to do something else, and
                 // that'll go here.
+                
                 print("Big man tings dis. In other words, account created")
             } else {
                 // Need additional error labels for
