@@ -130,14 +130,61 @@ extension UIImageView {
     self.image = anyImage
   }
 
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
+    // MARK: Initializers
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
+        self.contentView.backgroundColor = Colors.bluePurple
+        setupViews()
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
     }
+    
+    // MARK: View Setup
+    private func setupViews() {
+        // Stack View
+        self.contentView.addSubview(self.verticalStackView)
+        self.verticalStackView.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            self.verticalStackView.centerYAnchor.constraint(equalTo: self.contentView.centerYAnchor),
+            self.verticalStackView.centerXAnchor.constraint(equalTo: self.contentView.centerXAnchor),
+            self.verticalStackView.widthAnchor.constraint(equalTo: self.contentView.widthAnchor),
+        ])
+        
+        // Profile Image
+        guard let image = UIImage(named: "LogoMedium") else {
+            print("Error - Could not load profile image")
+            return
+        }
+        let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 100, height: 100))
+        imageView.maskCircle(anyImage: image)
+        self.verticalStackView.addArrangedSubview(imageView)
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            imageView.topAnchor.constraint(equalTo: self.contentView.topAnchor, constant: self.contentView.bounds.height)
+        ])
+        
+        // Buttons
+        self.verticalStackView.addArrangedSubview(self.buttonStackView)
+        NSLayoutConstraint.activate([
+            self.buttonStackView.heightAnchor.constraint(equalToConstant: 100),
+            self.buttonStackView.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor, constant: 31),
+            self.buttonStackView.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor, constant: -31),
+        ])
+        
+        self.buttonStackView.addArrangedSubview(editButton)
+        self.buttonStackView.addArrangedSubview(cameraButton)
+        self.buttonStackView.addArrangedSubview(signOutButton)
+    }
+}
+
+extension UIImageView {
+  public func maskCircle(anyImage: UIImage) {
+    self.contentMode = .scaleAspectFill
+    self.layer.cornerRadius = self.frame.size.width / 2
+    self.layer.masksToBounds = false
+    self.clipsToBounds = true
+    self.image = anyImage
+  }
 }

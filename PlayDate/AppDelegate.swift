@@ -25,9 +25,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // View controllers
         window?.backgroundColor = .systemBackground
         
-        let main = MainLaunchViewController()
-        let logoImage = UIImage(named: "LogoMedium")
-        main.logoImage = logoImage
+        let main = UserProfileViewController()
+//        let logoImage = UIImage(named: "LogoMedium")
+//        main.logoImage = logoImage
         
         let navVC = UINavigationController(rootViewController: main)
         window?.rootViewController = navVC
