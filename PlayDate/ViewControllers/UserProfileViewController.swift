@@ -29,11 +29,6 @@ class UserProfileViewController: UITableViewController {
 
     // MARK: - Table View Data Source
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return 2
-    }
-
-    // MARK: - Table View Data Source
-    override func numberOfSections(in tableView: UITableView) -> Int {
         return 4
     }
 
@@ -133,4 +128,5 @@ class UserProfileViewController: UITableViewController {
         }
         return view.bounds.height / 7
     }
+     */
 }
