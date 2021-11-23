@@ -157,6 +157,12 @@ class UserRegisterViewController: UIViewController {
                 // probably want to do something else, and
                 // that'll go here.
                 //
+                let user1 = User.init(userID: auth.getUser())
+                
+                user1.updateName(name: "Paul McDunham")
+                user1.updateAge(age: 47)
+                user1.updateBio(bio: "Cool dude, with an even cooler bunch of cat companions! ")
+                
                 print("Big man tings dis. In other words, account created")
                 strongSelf.registerLabel.isHidden = true
                 strongSelf.emailField.isHidden = true
