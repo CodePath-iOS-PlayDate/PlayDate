@@ -30,10 +30,10 @@ An app for setting up play-dates with fellow pet owners.
 
 - [x] User can create an account
 - [x] User can login
-- [ ] Users can stay logged in between restarts
+- [x] Users can stay logged in between restarts
 - [ ] Users can upload pictures to their profile
 - [ ] Users can add their pet name, type, and age to their profile
-- [ ] Users can create a biography in their profile
+- [x] Users can create a biography in their profile
 - [ ] Users can add external contact information to their profile to send to matches
 - [ ] Users can swipe left to reject a potential match
 - [ ] Users can swipe right to accept a potential match
