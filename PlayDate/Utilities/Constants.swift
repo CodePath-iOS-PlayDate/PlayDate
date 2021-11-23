@@ -11,3 +11,7 @@ public enum Colors {
     static let blueGreen = UIColor(named: "blueGreen")
     static let bluePurple = UIColor(named: "bluePurple")
 }
+
+public enum CustomUserDefaults {
+    static let isUserLoggedIn = "isUserLoggedIn"
+}

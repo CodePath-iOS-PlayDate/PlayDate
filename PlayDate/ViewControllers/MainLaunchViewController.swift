@@ -60,6 +60,10 @@ class MainLaunchViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        if UserDefaults.standard.bool(forKey: CustomUserDefaults.isUserLoggedIn) {
+            navToFeed()
+            return
+        }
         view.backgroundColor = .systemBackground
         initView()
     }
@@ -106,5 +110,10 @@ class MainLaunchViewController: UIViewController {
         let registerVC = UserRegisterViewController()
         registerVC.logoImage = UIImage(named: "LogoMedium")
         self.navigationController?.pushViewController(registerVC, animated: true)
+    }
+    
+    @objc func navToFeed() {
+        let feedVC = FeedViewController()
+        self.navigationController?.pushViewController(feedVC, animated: true)
     }
 }

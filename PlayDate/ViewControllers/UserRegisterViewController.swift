@@ -179,6 +179,7 @@ class UserRegisterViewController: UIViewController {
                 // that'll go here.
                 
                 print("Big man tings dis. In other words, account created")
+                UserDefaults.standard.setValue(true, forKey: CustomUserDefaults.isUserLoggedIn)
             } else {
                 // Need additional error labels for
                 // other failure conditions.
