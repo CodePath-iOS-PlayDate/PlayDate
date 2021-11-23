@@ -32,6 +32,8 @@
 		07DD76072730288600EFBC9B /* PlayDateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DD76062730288600EFBC9B /* PlayDateTests.swift */; };
 		07DD76112730288600EFBC9B /* PlayDateUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DD76102730288600EFBC9B /* PlayDateUITests.swift */; };
 		07DD76132730288600EFBC9B /* PlayDateUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DD76122730288600EFBC9B /* PlayDateUITestsLaunchTests.swift */; };
+		07EA1A74274C6D3E00752E29 /* UserProfileViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07EA1A73274C6D3E00752E29 /* UserProfileViewCell.swift */; };
+		07EA1A76274C6D5700752E29 /* PetProfileViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07EA1A75274C6D5700752E29 /* PetProfileViewCell.swift */; };
 		07FABF4E274A9B3100EBE839 /* UserProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07FABF4D274A9B3100EBE839 /* UserProfileViewController.swift */; };
 		07FABF51274A9D2400EBE839 /* UserProfileHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07FABF50274A9D2400EBE839 /* UserProfileHeaderCell.swift */; };
 		1ABCB944165A8B69C4FCC9FF /* Pods_PlayDateTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AE0AC1838809481C2F79876 /* Pods_PlayDateTests.framework */; };
@@ -89,6 +91,8 @@
 		07DD760C2730288600EFBC9B /* PlayDateUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PlayDateUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		07DD76102730288600EFBC9B /* PlayDateUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayDateUITests.swift; sourceTree = "<group>"; };
 		07DD76122730288600EFBC9B /* PlayDateUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayDateUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		07EA1A73274C6D3E00752E29 /* UserProfileViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileViewCell.swift; sourceTree = "<group>"; };
+		07EA1A75274C6D5700752E29 /* PetProfileViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetProfileViewCell.swift; sourceTree = "<group>"; };
 		07FABF4D274A9B3100EBE839 /* UserProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileViewController.swift; sourceTree = "<group>"; };
 		07FABF50274A9D2400EBE839 /* UserProfileHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileHeaderCell.swift; sourceTree = "<group>"; };
 		17E7010EC0AC3C8EF8740561 /* Pods_PlayDate.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PlayDate.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -259,6 +263,8 @@
 			isa = PBXGroup;
 			children = (
 				07FABF50274A9D2400EBE839 /* UserProfileHeaderCell.swift */,
+				07EA1A73274C6D3E00752E29 /* UserProfileViewCell.swift */,
+				07EA1A75274C6D5700752E29 /* PetProfileViewCell.swift */,
 			);
 			path = UserProfileCells;
 			sourceTree = "<group>";
@@ -532,6 +538,8 @@
 				07DD15E62743712100E4D3BE /* OnboardingTextField.swift in Sources */,
 				07DD15E4274370FC00E4D3BE /* LoginViewController.swift in Sources */,
 				07C54B0D273A0F1F004C0742 /* UserRegister.swift in Sources */,
+				07EA1A74274C6D3E00752E29 /* UserProfileViewCell.swift in Sources */,
+				07EA1A76274C6D5700752E29 /* PetProfileViewCell.swift in Sources */,
 				07C54B11273A0F3B004C0742 /* PetRegister.swift in Sources */,
 				07C54B07273A0EB5004C0742 /* UserProfile.swift in Sources */,
 				07FABF51274A9D2400EBE839 /* UserProfileHeaderCell.swift in Sources */,

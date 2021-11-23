@@ -29,17 +29,13 @@ class UserProfileViewController: UITableViewController {
 
     // MARK: - Table View Data Source
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return 4
+        return 2
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if section == 0 {
             return 1
         } else if section == 1 {
-            return 1
-        } else if section == 2 {
-            return 1
-        } else if section == 3 {
             return 1
         } else {
             print("Error - Section \(section) numberOfRowsInSection not implemented")
