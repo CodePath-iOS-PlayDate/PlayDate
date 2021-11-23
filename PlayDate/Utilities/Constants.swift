@@ -6,3 +6,8 @@
 //
 
 import UIKit
+
+public enum Colors {
+    static let blueGreen = UIColor(named: "blueGreen")
+    static let bluePurple = UIColor(named: "bluePurple")
+}
