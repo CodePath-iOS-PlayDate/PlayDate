@@ -61,7 +61,7 @@ class MainLaunchViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         if UserDefaults.standard.bool(forKey: CustomUserDefaults.isUserLoggedIn) {
-            navToFeed()
+            navToHome()
             return
         }
         view.backgroundColor = .systemBackground
@@ -112,8 +112,9 @@ class MainLaunchViewController: UIViewController {
         self.navigationController?.pushViewController(registerVC, animated: true)
     }
     
-    @objc func navToFeed() {
-        let feedVC = FeedViewController()
-        self.navigationController?.pushViewController(feedVC, animated: true)
+    @objc func navToHome() {
+        let homeVC = HomeTabBarController()
+        homeVC.modalPresentationStyle = .fullScreen
+        self.present(homeVC, animated: true)
     }
 }
