@@ -42,10 +42,6 @@ class UserProfileViewController: UITableViewController {
             return 1
         } else if section == 1 {
             return 1
-        } else if section == 2 {
-            return 1
-        } else if section == 3 {
-            return 1
         } else {
             print("Error - Section \(section) numberOfRowsInSection not implemented")
             return 0
