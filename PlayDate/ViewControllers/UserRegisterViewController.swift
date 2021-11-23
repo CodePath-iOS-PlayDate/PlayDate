@@ -182,7 +182,8 @@ class UserRegisterViewController: UIViewController {
                 UserDefaults.standard.setValue(true, forKey: CustomUserDefaults.isUserLoggedIn)
                 
                 let homeVC = HomeTabBarController()
-                self?.present(homeVC, animated: true)
+                homeVC.modalPresentationStyle = .fullScreen
+                strongSelf.present(homeVC, animated: true)
             } else {
                 // Need additional error labels for
                 // other failure conditions.
