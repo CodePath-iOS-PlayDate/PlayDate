@@ -13,6 +13,8 @@ class AuthManager{
     static var client : Auth = FirebaseAuth.Auth.auth()
     static var email : String?
     static var password: String?
+    static var user: User?
+    static var id: String?
     
     // Reference literature on swift closures for use.
     // Or just look at theregisterviewcontroller.
@@ -24,7 +26,9 @@ class AuthManager{
         }
         AuthManager.client.createUser(withEmail: email, password: password, completion: { (result, error) in
             if let user = result?.user{
-                print(user)
+                print( "UserID is \(user.uid)")
+                self.id = user.uid
+                self.user = User(userID: self.id!)
                 completionBlock(true)
             } else {
                 completionBlock(false)
@@ -43,7 +47,8 @@ class AuthManager{
         }
         AuthManager.client.signIn(withEmail: email, password: password, completion: { result, error in
             if let user = result?.user{
-                print(user)
+                print(user.uid)
+                self.user = User(userID: user.uid)
                 completionBlock(true)
             } else {
                 completionBlock(false)
@@ -58,7 +63,9 @@ class AuthManager{
         }catch let error as NSError {
             completionBlock(false)
         }
-        
     }
-
+  
+    func getUser()-> String{
+        return self.id!
+    }
 }
