@@ -105,24 +105,32 @@ class LoginViewController: UIViewController {
         stackView.addArrangedSubview(passwordTextField)
         passwordTextField.widthAnchor.constraint(equalTo: stackView.widthAnchor).isActive = true
         
-        // Register Button
+        // Login Button
         loginButton.setContentHuggingPriority(.required, for: .vertical)
         loginButton.setContentCompressionResistancePriority(.required, for: .vertical)
         stackView.addArrangedSubview(loginButton)
         loginButton.translatesAutoresizingMaskIntoConstraints = false
         loginButton.widthAnchor.constraint(equalTo: stackView.widthAnchor).isActive = true
-        
-        // No Account Label
-        noAccountLabel.setContentHuggingPriority(.required, for: .vertical)
-        noAccountLabel.addGestureRecognizer(UITapGestureRecognizer(
-            target: self,
-            action: #selector(labelTapped(_:))
-        ))
-        stackView.addArrangedSubview(noAccountLabel)
-        noAccountLabel.trailingAnchor.constraint(equalTo: stackView.trailingAnchor).isActive = true
+        loginButton.addTarget(self, action: #selector(didLoginTapped(_:)), for: .touchUpInside)
     }
     
-    @objc func labelTapped(_ sender: UITapGestureRecognizer) {
-        print("Need to nav to register vc")
+    @objc func didLoginTapped(_ sender: UITapGestureRecognizer) {
+        AuthManager.email = emailTextField.text
+        AuthManager.password = passwordTextField.text
+        AuthManager.login() { [weak self] (success) in
+            guard let self = self else { return }
+            
+            if success {
+                UserDefaults.standard.setValue(true, forKey: CustomUserDefaults.isUserLoggedIn)
+                
+                let homeVC = HomeTabBarController()
+                homeVC.modalPresentationStyle = .fullScreen
+                self.present(homeVC, animated: true)
+            } else {
+                let alert = UIAlertController(title: "Oops!", message: "Looks like we can't log you in right now. Please try again later.", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+                self.present(alert, animated: true)
+            }
+        }
     }
 }

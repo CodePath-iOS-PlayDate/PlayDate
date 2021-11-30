@@ -163,10 +163,11 @@ class UserRegisterViewController: UIViewController {
         // then create a popup to yell at the user
         
         // Initialize Authmanager with approved email + password
-        let auth = AuthManager.init(email:email, password: password)
+        AuthManager.email = email
+        AuthManager.password = password
         
         //FIreBase API call!
-        auth.register() { [weak self] (success) in
+        AuthManager.register() { [weak self] (success) in
             guard let strongSelf = self else{
                 return
             }
