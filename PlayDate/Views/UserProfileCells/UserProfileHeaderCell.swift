@@ -16,6 +16,7 @@ class UserProfileHeaderCell: UITableViewCell {
         stackView.axis = .vertical
         stackView.alignment = .center
         stackView.distribution = .equalCentering
+        stackView.spacing = 30
         return stackView
     }()
     
