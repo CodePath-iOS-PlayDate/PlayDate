@@ -59,10 +59,10 @@ class UserProfileViewCell: UITableViewCell {
         self.contentView.addSubview(self.verticalStackView)
         self.verticalStackView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            self.verticalStackView.topAnchor.constraint(equalTo: self.contentView.topAnchor, constant: 21),
+            self.verticalStackView.topAnchor.constraint(equalTo: self.contentView.layoutMarginsGuide.topAnchor, constant: 21),
             self.verticalStackView.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor, constant: 21),
             self.verticalStackView.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor, constant: -21),
-            self.verticalStackView.bottomAnchor.constraint(equalTo: self.contentView.bottomAnchor, constant: 21)
+            self.verticalStackView.bottomAnchor.constraint(equalTo: self.contentView.layoutMarginsGuide.bottomAnchor, constant: -21)
         ])
         
         self.verticalStackView.addArrangedSubview(nameLabel)

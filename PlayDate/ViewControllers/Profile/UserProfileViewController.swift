@@ -23,15 +23,26 @@ class UserProfileViewController: UITableViewController {
         self.navigationController?.navigationBar.scrollEdgeAppearance = self.navigationController?.navigationBar.standardAppearance
         self.navigationController?.navigationBar.layoutIfNeeded()
         
-        tableView.rowHeight = UITableView.automaticDimension
-        tableView.estimatedRowHeight = 100.0
-        
         self.registerCustomCells()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        tableView.estimatedRowHeight = 100.0
+        tableView.rowHeight = UITableView.automaticDimension
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        tableView.reloadData()
+        tableView.setNeedsLayout()
+        tableView.layoutIfNeeded()
     }
     
     private func registerCustomCells() {
         tableView.register(UserProfileHeaderCell.self, forCellReuseIdentifier: UserProfileHeaderCell.identifier)
         tableView.register(UserProfileViewCell.self, forCellReuseIdentifier: UserProfileViewCell.identifier)
+        tableView.register(PetProfileViewCell.self, forCellReuseIdentifier: PetProfileViewCell.identifier)
     }
 
     // MARK: - Table View Data Source
@@ -64,9 +75,14 @@ class UserProfileViewController: UITableViewController {
             cell.isUserInteractionEnabled = false
             return cell
         case 2:
-            break
-        case 3:
-            break
+            guard let cell = tableView.dequeueReusableCell(
+                withIdentifier: PetProfileViewCell.identifier,
+                for: indexPath
+            ) as? PetProfileViewCell else {
+                return UITableViewCell()
+            }
+            cell.isUserInteractionEnabled = false
+            return cell
         default:
             break
         }
@@ -76,22 +92,6 @@ class UserProfileViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
     }
-    
-//    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-//        switch indexPath.section {
-//        case 0:
-//            return view.bounds.height / 1.8
-//        case 1:
-//            return view.bounds.height / 1.8
-//        case 2:
-//            break
-//        case 3:
-//            break
-//        default:
-//            break
-//        }
-//        return view.bounds.height / 7
-//    }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
          return UITableView.automaticDimension

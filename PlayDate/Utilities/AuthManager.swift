@@ -47,7 +47,7 @@ class AuthManager{
         })
     }
 
-    func signOut(email: String){
+    func signOut(){
         do {
             try client.signOut()
         }catch let error as NSError {
