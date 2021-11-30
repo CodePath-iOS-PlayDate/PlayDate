@@ -40,6 +40,7 @@
 		2FED8F93274AFDCB00D7292A /* HomeTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FED8F92274AFDCA00D7292A /* HomeTabBarController.swift */; };
 		4C2C2F48273A285F00123D5A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4C2C2F47273A285F00123D5A /* GoogleService-Info.plist */; };
 		4C2C2F502745B5C400123D5A /* MatchListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C2C2F4F2745B5C400123D5A /* MatchListViewController.swift */; };
+		4C2C2F532754921D00123D5A /* MatchContactInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C2C2F522754921D00123D5A /* MatchContactInfoViewController.swift */; };
 		64472968209DD489FE43E942 /* Pods_PlayDate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17E7010EC0AC3C8EF8740561 /* Pods_PlayDate.framework */; };
 		D9BBB99A34F260A9A52EACB1 /* Pods_PlayDate_PlayDateUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1A8195EAD6F67B359547CEE /* Pods_PlayDate_PlayDateUITests.framework */; };
 /* End PBXBuildFile section */
@@ -99,6 +100,7 @@
 		2FED8F92274AFDCA00D7292A /* HomeTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTabBarController.swift; sourceTree = "<group>"; };
 		4C2C2F47273A285F00123D5A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		4C2C2F4F2745B5C400123D5A /* MatchListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchListViewController.swift; sourceTree = "<group>"; };
+		4C2C2F522754921D00123D5A /* MatchContactInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchContactInfoViewController.swift; sourceTree = "<group>"; };
 		623AD1832D0518C662B401B3 /* Pods-PlayDate.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PlayDate.release.xcconfig"; path = "Target Support Files/Pods-PlayDate/Pods-PlayDate.release.xcconfig"; sourceTree = "<group>"; };
 		8AE0AC1838809481C2F79876 /* Pods_PlayDateTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PlayDateTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ADD0321EBF9FE8EF4E78C169 /* Pods-PlayDateTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PlayDateTests.debug.xcconfig"; path = "Target Support Files/Pods-PlayDateTests/Pods-PlayDateTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -176,6 +178,7 @@
 				4C2C2F4F2745B5C400123D5A /* MatchListViewController.swift */,
 				2FED8F92274AFDCA00D7292A /* HomeTabBarController.swift */,
 				07FABF4D274A9B3100EBE839 /* UserProfileViewController.swift */,
+				4C2C2F522754921D00123D5A /* MatchContactInfoViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -550,6 +553,7 @@
 				07DD75ED2730288200EFBC9B /* AppDelegate.swift in Sources */,
 				07C54B17273A0F8B004C0742 /* PetProfileSetupViewController.swift in Sources */,
 				4C2C2F502745B5C400123D5A /* MatchListViewController.swift in Sources */,
+				4C2C2F532754921D00123D5A /* MatchContactInfoViewController.swift in Sources */,
 				07C54B0F273A0F27004C0742 /* Launch.swift in Sources */,
 				07C54B13273A0F73004C0742 /* FeedViewController.swift in Sources */,
 				07FABF4E274A9B3100EBE839 /* UserProfileViewController.swift in Sources */,
