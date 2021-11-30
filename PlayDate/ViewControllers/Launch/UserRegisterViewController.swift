@@ -163,10 +163,11 @@ class UserRegisterViewController: UIViewController {
         // then create a popup to yell at the user
         
         // Initialize Authmanager with approved email + password
-        let auth = AuthManager.init(email:email, password: password)
+        AuthManager.email = email
+        AuthManager.password = password
         
         //FIreBase API call!
-        auth.register() { [weak self] (success) in
+        AuthManager.register() { [weak self] (success) in
             guard let strongSelf = self else{
                 return
             }
@@ -182,7 +183,8 @@ class UserRegisterViewController: UIViewController {
                 UserDefaults.standard.setValue(true, forKey: CustomUserDefaults.isUserLoggedIn)
                 
                 let homeVC = HomeTabBarController()
-                self?.present(homeVC, animated: true)
+                homeVC.modalPresentationStyle = .fullScreen
+                strongSelf.present(homeVC, animated: true)
             } else {
                 // Need additional error labels for
                 // other failure conditions.
