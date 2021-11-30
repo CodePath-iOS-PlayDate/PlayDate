@@ -13,6 +13,8 @@ class AuthManager{
     private var client : Auth
     private var email : String
     private var password: String
+    private var user : User?
+    private var id: String?
     
     init(email:String, password:String){
         self.email = email
@@ -25,7 +27,9 @@ class AuthManager{
         
         client.createUser(withEmail: email, password: password, completion: { (result, error) in
             if let user = result?.user{
-                print(user)
+                print( "UserID is \(user.uid)")
+                self.id = user.uid
+                self.user = User(userID: self.id!)
                 completionBlock(true)
             } else {
                 completionBlock(false)
@@ -39,7 +43,8 @@ class AuthManager{
     func login(completionBlock: @escaping(_ success: Bool) -> Void){
         client.signIn(withEmail: email, password: password, completion: { result, error in
             if let user = result?.user{
-                print(user)
+                print(user.uid)
+                self.user = User(userID: user.uid)
                 completionBlock(true)
             } else {
                 completionBlock(false)
@@ -50,10 +55,13 @@ class AuthManager{
     func signOut(email: String){
         do {
             try client.signOut()
+            print("Signed Out!")
         }catch let error as NSError {
-            print("\(error)")
+            print("Not quite signed out... \(error)")
         }
         
     }
-
+    func getUser()-> String{
+        return self.id!
+    }
 }
