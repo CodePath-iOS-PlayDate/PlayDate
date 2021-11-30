@@ -63,7 +63,7 @@ class UserProfileViewController: UITableViewController {
             ) as? UserProfileHeaderCell else {
                 return UITableViewCell()
             }
-            cell.isUserInteractionEnabled = false
+            cell.isUserInteractionEnabled = true
             return cell
         case 1:
             guard let cell = tableView.dequeueReusableCell(
