@@ -812,7 +812,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = ADD0321EBF9FE8EF4E78C169 /* Pods-PlayDateTests.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -838,7 +837,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = E69C065345D54A6F33AC46F4 /* Pods-PlayDateTests.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -864,7 +862,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = B43B28DE945D4D2508147712 /* Pods-PlayDate-PlayDateUITests.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 2LG7N2H9LJ;
@@ -888,7 +885,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = B48DB0AD9A0713CFA3591A2D /* Pods-PlayDate-PlayDateUITests.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 2LG7N2H9LJ;
