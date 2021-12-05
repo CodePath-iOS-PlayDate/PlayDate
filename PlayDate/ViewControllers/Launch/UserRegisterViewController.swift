@@ -182,9 +182,9 @@ class UserRegisterViewController: UIViewController {
                 print("Big man tings dis. In other words, account created")
                 UserDefaults.standard.setValue(true, forKey: CustomUserDefaults.isUserLoggedIn)
                 
-                let homeVC = HomeTabBarController()
-                homeVC.modalPresentationStyle = .fullScreen
-                strongSelf.present(homeVC, animated: true)
+                let userSetupVC = UserProfileSetupViewController()
+                userSetupVC.modalPresentationStyle = .fullScreen
+                strongSelf.present(userSetupVC, animated: true)
             } else {
                 // Need additional error labels for
                 // other failure conditions.
