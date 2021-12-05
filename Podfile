@@ -11,6 +11,7 @@ target 'PlayDate' do
   pod 'Firebase/Auth'
   pod 'Firebase/Core'
   pod 'Firebase/Firestore'
+  pod 'Shuffle-iOS'
 
   target 'PlayDateTests' do
     inherit! :search_paths
