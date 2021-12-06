@@ -27,7 +27,7 @@ class AuthManager{
         AuthManager.client.createUser(withEmail: email, password: password, completion: { (result, error) in
             if let user = result?.user{
                 print( "UserID is \(user.uid)")
-                self.id = user.uid
+                self.id = user.uid as String
                 self.user = User(userID: self.id!)
                 completionBlock(true)
             } else {
@@ -65,7 +65,7 @@ class AuthManager{
         }
     }
   
-    func getUser()-> String{
-        return self.id!
-    }
+   // func getUser()-> String{
+     //   return self.id!
+    //}
 }
