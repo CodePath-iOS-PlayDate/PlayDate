@@ -7,130 +7,94 @@
 
 import UIKit
 
-class MatchContactInfoViewController: UIViewController {
-
-    let verticalStackView: UIStackView = {
-        let stackView = UIStackView()
-        stackView.alignment = .center
-        stackView.axis = .vertical
-        stackView.distribution = .fillProportionally
-        stackView.spacing = 27
-        return stackView
-    }()
-
-    let petNameLabel: UILabel = {
-        let label = UILabel(frame: CGRect(x: 0, y: 0, width: 100.0, height: 200.0));
-        label.text = "Pet Name"
-        label.backgroundColor = .white
-        label.textAlignment = .right
-        label.font = UIFont.boldSystemFont(ofSize: 25.0)
-
-        return label
-    }()
-
-    let petOwnerLabel: UILabel = {
-        let label = UILabel(frame: CGRect(x: 0, y: 0, width: 100.0, height: 200.0));
-        label.text = "Owner Name"
-        label.backgroundColor = .white
-        label.textAlignment = .right
-        label.textColor = .lightGray
-        label.font = UIFont.boldSystemFont(ofSize: 22.0)
-
-        return label
-    }()
-
-    let profileImageView: UIImageView = {
-        let imageView = UIImageView()
-        imageView.image = UIImage(named: "AppIcon")
-        imageView.contentMode = .scaleAspectFill
-        imageView.backgroundColor = .systemTeal
-        imageView.layer.cornerRadius = 50
-        imageView.layer.masksToBounds = true
-        imageView.translatesAutoresizingMaskIntoConstraints = false
-
-        return imageView
-    }()
-
-    let picturesLabel: UILabel = {
-        let label = UILabel(frame: CGRect(x: 0, y: 0, width: 100.0, height: 200.0));
-        label.text = "Pictures"
-        label.backgroundColor = .white
-        label.textAlignment = .right
-        label.textColor = .lightGray
-        label.font = UIFont.boldSystemFont(ofSize: 22.0)
-
-        return label
-    }()
-
-    let infoLabel: UILabel = {
-        let label = UILabel(frame: CGRect(x: 0, y: 0, width: 100.0, height: 200.0));
-        label.text = "Info"
-        label.backgroundColor = .white
-        label.textAlignment = .right
-        label.textColor = .lightGray
-        label.font = UIFont.boldSystemFont(ofSize: 22.0)
-
-        return label
-    }()
+class MatchContactInfoViewController: UITableViewController {
     
     override func viewDidLoad() {
-            super.viewDidLoad()
-            view.backgroundColor = .systemBackground
-            initView()
-            configureItems()
+        super.viewDidLoad()
+        title = "Match"
+        
+        let appearance = UINavigationBarAppearance()
+        appearance.configureWithOpaqueBackground()
+        appearance.backgroundColor = Colors.bluePurple
+        appearance.largeTitleTextAttributes = [.foregroundColor: UIColor.white]
+        appearance.titleTextAttributes = [.foregroundColor: UIColor.white]
+        appearance.shadowColor = .clear
+        self.navigationController?.navigationBar.standardAppearance = appearance
+        self.navigationController?.navigationBar.scrollEdgeAppearance = self.navigationController?.navigationBar.standardAppearance
+        self.navigationController?.navigationBar.layoutIfNeeded()
+        
+        configureItems()
+        self.registerCustomCells()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        tableView.reloadData()
+        tableView.setNeedsLayout()
+        tableView.layoutIfNeeded()
+    }
+    
+    private func registerCustomCells() {
+        tableView.register(MatchHeaderTableViewCell.self, forCellReuseIdentifier: MatchHeaderTableViewCell.identifier)
+        tableView.register(MatchPicturesTableViewCell.self, forCellReuseIdentifier: MatchPicturesTableViewCell.identifier)
+        tableView.register(MatchInfoTableViewCell.self, forCellReuseIdentifier: MatchInfoTableViewCell.identifier)
+    }
+    
+    override func numberOfSections(in tableView: UITableView) -> Int {
+        return 3
+    }
+    
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 1
+    }
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+            switch indexPath.section {
+            case 0:
+                guard let cell = tableView.dequeueReusableCell(
+                    withIdentifier: MatchHeaderTableViewCell.identifier,
+                    for: indexPath
+                ) as? MatchHeaderTableViewCell else {
+                    return UITableViewCell()
+                }
+                cell.isUserInteractionEnabled = true
+                return cell
+            case 1:
+                guard let cell = tableView.dequeueReusableCell(
+                    withIdentifier: MatchPicturesTableViewCell.identifier,
+                    for: indexPath
+                ) as? MatchPicturesTableViewCell else {
+                    return UITableViewCell()
+                }
+                cell.isUserInteractionEnabled = false
+                return cell
+            case 2:
+                guard let cell = tableView.dequeueReusableCell(
+                    withIdentifier: MatchInfoTableViewCell.identifier,
+                    for: indexPath
+                ) as? MatchInfoTableViewCell else {
+                    return UITableViewCell()
+                }
+                cell.isUserInteractionEnabled = false
+                return cell
+            default:
+                break
+            }
+            return UITableViewCell()
         }
-
-
-    var image: UIImage?
+        
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
+        
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableView.automaticDimension
+    }
     
     // Back button at the navigation bar
     private func configureItems() {
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Back", image: nil, primaryAction: nil, menu: nil)
     }
-
-    func initView() {
-
-        // Stack View
-        view.addSubview(verticalStackView)
-        verticalStackView.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([
-            verticalStackView.heightAnchor.constraint(equalToConstant: view.bounds.height / 2),
-            verticalStackView.centerYAnchor.constraint(equalTo: view.centerYAnchor),
-            verticalStackView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            verticalStackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 26),
-            verticalStackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -26),
-        ])
-        
-        // Placeholder for match's profile photo
-        profileImageView.setContentCompressionResistancePriority(.required, for: .vertical)
-        verticalStackView.addArrangedSubview(profileImageView)
-        profileImageView.leftAnchor.constraint(equalTo: verticalStackView.leftAnchor).isActive = true
-
-        // Placeholder for pet name information
-        petNameLabel.setContentHuggingPriority(.required, for: .vertical)
-        petNameLabel.setContentCompressionResistancePriority(.required, for: .vertical)
-        verticalStackView.addArrangedSubview(petNameLabel)
-        petNameLabel.widthAnchor.constraint(equalTo: verticalStackView.widthAnchor).isActive = true
-        
-        // Placeholder for pet owner information
-        petOwnerLabel.setContentHuggingPriority(.required, for: .vertical)
-        petOwnerLabel.setContentCompressionResistancePriority(.required, for: .vertical)
-        verticalStackView.addArrangedSubview(petOwnerLabel)
-        petOwnerLabel.widthAnchor.constraint(equalTo: verticalStackView.widthAnchor).isActive = true
-        
-        // Placeholder for design sake until I clarify what goes here
-        picturesLabel.setContentHuggingPriority(.required, for: .vertical)
-        picturesLabel.setContentCompressionResistancePriority(.required, for: .vertical)
-        verticalStackView.addArrangedSubview(picturesLabel)
-        
-        // Placeholder text for match's information
-        infoLabel.setContentHuggingPriority(.required, for: .vertical)
-        infoLabel.setContentCompressionResistancePriority(.required, for: .vertical)
-        verticalStackView.addArrangedSubview(infoLabel)
-
-
-    }
-    
 
 }
 
