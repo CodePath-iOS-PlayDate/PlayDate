@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		07A9C148275E8FEC00937C62 /* CardContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07A9C147275E8FEC00937C62 /* CardContentView.swift */; };
+		07A9C14C275E99C400937C62 /* CardSwipeOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07A9C14B275E99C400937C62 /* CardSwipeOverlay.swift */; };
 		07C54B03273A0E7F004C0742 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C54B02273A0E7F004C0742 /* User.swift */; };
 		07C54B05273A0E9B004C0742 /* Pet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C54B04273A0E9B004C0742 /* Pet.swift */; };
 		07C54B07273A0EB5004C0742 /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C54B06273A0EB5004C0742 /* UserProfile.swift */; };
@@ -64,6 +65,7 @@
 
 /* Begin PBXFileReference section */
 		07A9C147275E8FEC00937C62 /* CardContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardContentView.swift; sourceTree = "<group>"; };
+		07A9C14B275E99C400937C62 /* CardSwipeOverlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardSwipeOverlay.swift; sourceTree = "<group>"; };
 		07C54B02273A0E7F004C0742 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		07C54B04273A0E9B004C0742 /* Pet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pet.swift; sourceTree = "<group>"; };
 		07C54B06273A0EB5004C0742 /* UserProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
@@ -178,6 +180,7 @@
 			isa = PBXGroup;
 			children = (
 				07A9C147275E8FEC00937C62 /* CardContentView.swift */,
+				07A9C14B275E99C400937C62 /* CardSwipeOverlay.swift */,
 			);
 			path = FeedViews;
 			sourceTree = "<group>";
@@ -583,6 +586,7 @@
 				07C54B0D273A0F1F004C0742 /* UserRegister.swift in Sources */,
 				07EA1A74274C6D3E00752E29 /* UserProfileViewCell.swift in Sources */,
 				07EA1A76274C6D5700752E29 /* PetProfileViewCell.swift in Sources */,
+				07A9C14C275E99C400937C62 /* CardSwipeOverlay.swift in Sources */,
 				07C54B11273A0F3B004C0742 /* PetRegister.swift in Sources */,
 				07C54B07273A0EB5004C0742 /* UserProfile.swift in Sources */,
 				07FABF51274A9D2400EBE839 /* UserProfileHeaderCell.swift in Sources */,

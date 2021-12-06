@@ -61,11 +61,14 @@ class FeedViewController: UIViewController {
 extension FeedViewController: SwipeCardStackDataSource, SwipeCardStackDelegate {
     func cardStack(_ cardStack: SwipeCardStack, cardForIndexAt index: Int) -> SwipeCard {
         let swipeCard = SwipeCard()
-        swipeCard.swipeDirections = [.left, .up, .right]
-        // Like / Dislike overlay needs to be add here for each swipe direction
+        swipeCard.swipeDirections = [.left, .right]
+        for direction in swipeCard.swipeDirections {
+            swipeCard.setOverlay(CardSwipeOverlay(swipeDirection: direction), forDirection: direction)
+        }
 
         let petModel = petProfileCardModels[index]
         swipeCard.content = CardContentView(withImage: petModel.image)
+        // Set footer here
         return swipeCard
     }
     
