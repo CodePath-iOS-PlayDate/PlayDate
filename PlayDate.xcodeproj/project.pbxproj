@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		07A9C148275E8FEC00937C62 /* CardContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07A9C147275E8FEC00937C62 /* CardContentView.swift */; };
 		07C54B03273A0E7F004C0742 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C54B02273A0E7F004C0742 /* User.swift */; };
 		07C54B05273A0E9B004C0742 /* Pet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C54B04273A0E9B004C0742 /* Pet.swift */; };
 		07C54B07273A0EB5004C0742 /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C54B06273A0EB5004C0742 /* UserProfile.swift */; };
@@ -62,6 +63,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		07A9C147275E8FEC00937C62 /* CardContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardContentView.swift; sourceTree = "<group>"; };
 		07C54B02273A0E7F004C0742 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		07C54B04273A0E9B004C0742 /* Pet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pet.swift; sourceTree = "<group>"; };
 		07C54B06273A0EB5004C0742 /* UserProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
@@ -172,6 +174,14 @@
 			path = Profile;
 			sourceTree = "<group>";
 		};
+		07A9C146275E8FD200937C62 /* FeedViews */ = {
+			isa = PBXGroup;
+			children = (
+				07A9C147275E8FEC00937C62 /* CardContentView.swift */,
+			);
+			path = FeedViews;
+			sourceTree = "<group>";
+		};
 		07C4DA382731914500B36C49 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
@@ -184,8 +194,9 @@
 		07C4DA392731915D00B36C49 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				07A9C146275E8FD200937C62 /* FeedViews */,
 				07FABF4F274A9CFB00EBE839 /* UserProfileCells */,
-				07C54B1A273A0FB2004C0742 /* Cells */,
+				07C54B1A273A0FB2004C0742 /* MatchCells */,
 				07DD15E52743712100E4D3BE /* OnboardingTextField.swift */,
 			);
 			path = Views;
@@ -225,12 +236,12 @@
 			path = ViewModels;
 			sourceTree = "<group>";
 		};
-		07C54B1A273A0FB2004C0742 /* Cells */ = {
+		07C54B1A273A0FB2004C0742 /* MatchCells */ = {
 			isa = PBXGroup;
 			children = (
 				07C54B1B273A0FDE004C0742 /* MatchTableViewCell.swift */,
 			);
-			path = Cells;
+			path = MatchCells;
 			sourceTree = "<group>";
 		};
 		07DD75E02730288200EFBC9B = {
@@ -585,6 +596,7 @@
 				07C54B0F273A0F27004C0742 /* Launch.swift in Sources */,
 				07C54B13273A0F73004C0742 /* FeedViewController.swift in Sources */,
 				07FABF4E274A9B3100EBE839 /* UserProfileViewController.swift in Sources */,
+				07A9C148275E8FEC00937C62 /* CardContentView.swift in Sources */,
 				07C54B19273A0FA7004C0742 /* MainLaunchViewController.swift in Sources */,
 				07C54B15273A0F81004C0742 /* UserRegisterViewController.swift in Sources */,
 				07C54B0B273A0F12004C0742 /* Login.swift in Sources */,
