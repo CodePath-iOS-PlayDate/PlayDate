@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		07A9C148275E8FEC00937C62 /* CardContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07A9C147275E8FEC00937C62 /* CardContentView.swift */; };
+		07A9C14C275E99C400937C62 /* CardSwipeOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07A9C14B275E99C400937C62 /* CardSwipeOverlay.swift */; };
+		07A9C14E275E9DFE00937C62 /* CardFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07A9C14D275E9DFE00937C62 /* CardFooterView.swift */; };
 		07C54B03273A0E7F004C0742 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C54B02273A0E7F004C0742 /* User.swift */; };
 		07C54B05273A0E9B004C0742 /* Pet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C54B04273A0E9B004C0742 /* Pet.swift */; };
 		07C54B07273A0EB5004C0742 /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C54B06273A0EB5004C0742 /* UserProfile.swift */; };
@@ -66,6 +69,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		07A9C147275E8FEC00937C62 /* CardContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardContentView.swift; sourceTree = "<group>"; };
+		07A9C14B275E99C400937C62 /* CardSwipeOverlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardSwipeOverlay.swift; sourceTree = "<group>"; };
+		07A9C14D275E9DFE00937C62 /* CardFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardFooterView.swift; sourceTree = "<group>"; };
 		07C54B02273A0E7F004C0742 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		07C54B04273A0E9B004C0742 /* Pet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pet.swift; sourceTree = "<group>"; };
 		07C54B06273A0EB5004C0742 /* UserProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
@@ -145,6 +151,51 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		078FBD522755AE19001C5F0D /* Launch */ = {
+			isa = PBXGroup;
+			children = (
+				07C54B14273A0F81004C0742 /* UserRegisterViewController.swift */,
+				07C54B16273A0F8B004C0742 /* PetProfileSetupViewController.swift */,
+				07C54B18273A0FA7004C0742 /* MainLaunchViewController.swift */,
+				07DD15E3274370FC00E4D3BE /* LoginViewController.swift */,
+			);
+			path = Launch;
+			sourceTree = "<group>";
+		};
+		078FBD532755AE1F001C5F0D /* Feed */ = {
+			isa = PBXGroup;
+			children = (
+				07C54B12273A0F73004C0742 /* FeedViewController.swift */,
+			);
+			path = Feed;
+			sourceTree = "<group>";
+		};
+		078FBD542755AE27001C5F0D /* Matches */ = {
+			isa = PBXGroup;
+			children = (
+				4C2C2F4F2745B5C400123D5A /* MatchListViewController.swift */,
+			);
+			path = Matches;
+			sourceTree = "<group>";
+		};
+		078FBD552755AE31001C5F0D /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				07FABF4D274A9B3100EBE839 /* UserProfileViewController.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		07A9C146275E8FD200937C62 /* FeedViews */ = {
+			isa = PBXGroup;
+			children = (
+				07A9C147275E8FEC00937C62 /* CardContentView.swift */,
+				07A9C14B275E99C400937C62 /* CardSwipeOverlay.swift */,
+				07A9C14D275E9DFE00937C62 /* CardFooterView.swift */,
+			);
+			path = FeedViews;
+			sourceTree = "<group>";
+		};
 		07C4DA382731914500B36C49 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
@@ -157,8 +208,9 @@
 		07C4DA392731915D00B36C49 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				07A9C146275E8FD200937C62 /* FeedViews */,
 				07FABF4F274A9CFB00EBE839 /* UserProfileCells */,
-				07C54B1A273A0FB2004C0742 /* Cells */,
+				07C54B1A273A0FB2004C0742 /* MatchCells */,
 				07DD15E52743712100E4D3BE /* OnboardingTextField.swift */,
 			);
 			path = Views;
@@ -176,12 +228,6 @@
 		07C4DA3B2731917800B36C49 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				07C54B12273A0F73004C0742 /* FeedViewController.swift */,
-				07C54B14273A0F81004C0742 /* UserRegisterViewController.swift */,
-				07C54B16273A0F8B004C0742 /* PetProfileSetupViewController.swift */,
-				07C54B18273A0FA7004C0742 /* MainLaunchViewController.swift */,
-				07DD15E3274370FC00E4D3BE /* LoginViewController.swift */,
-				4C2C2F4F2745B5C400123D5A /* MatchListViewController.swift */,
 				2FED8F92274AFDCA00D7292A /* HomeTabBarController.swift */,
 				07FABF4D274A9B3100EBE839 /* UserProfileViewController.swift */,
 				4C2C2F522754921D00123D5A /* MatchContactInfoViewController.swift */,
@@ -202,7 +248,7 @@
 			path = ViewModels;
 			sourceTree = "<group>";
 		};
-		07C54B1A273A0FB2004C0742 /* Cells */ = {
+		07C54B1A273A0FB2004C0742 /* MatchCells */ = {
 			isa = PBXGroup;
 			children = (
 				07C54B1B273A0FDE004C0742 /* MatchTableViewCell.swift */,
@@ -210,7 +256,7 @@
 				4C2C2F56275C6A9B00123D5A /* MatchPicturesTableViewCell.swift */,
 				4C2C2F58275C6F9700123D5A /* MatchInfoTableViewCell.swift */,
 			);
-			path = Cells;
+			path = MatchCells;
 			sourceTree = "<group>";
 		};
 		07DD75E02730288200EFBC9B = {
@@ -553,6 +599,7 @@
 				07C54B0D273A0F1F004C0742 /* UserRegister.swift in Sources */,
 				07EA1A74274C6D3E00752E29 /* UserProfileViewCell.swift in Sources */,
 				07EA1A76274C6D5700752E29 /* PetProfileViewCell.swift in Sources */,
+				07A9C14C275E99C400937C62 /* CardSwipeOverlay.swift in Sources */,
 				07C54B11273A0F3B004C0742 /* PetRegister.swift in Sources */,
 				07C54B07273A0EB5004C0742 /* UserProfile.swift in Sources */,
 				07FABF51274A9D2400EBE839 /* UserProfileHeaderCell.swift in Sources */,
@@ -560,6 +607,7 @@
 				2FED8F93274AFDCB00D7292A /* HomeTabBarController.swift in Sources */,
 				4C2C2F55275C14FA00123D5A /* MatchHeaderTableViewCell.swift in Sources */,
 				07DD75F12730288200EFBC9B /* ViewController.swift in Sources */,
+				07A9C14E275E9DFE00937C62 /* CardFooterView.swift in Sources */,
 				07DD75F72730288200EFBC9B /* PlayDate.xcdatamodeld in Sources */,
 				07DD75ED2730288200EFBC9B /* AppDelegate.swift in Sources */,
 				4C2C2F59275C6F9700123D5A /* MatchInfoTableViewCell.swift in Sources */,
@@ -569,6 +617,7 @@
 				07C54B0F273A0F27004C0742 /* Launch.swift in Sources */,
 				07C54B13273A0F73004C0742 /* FeedViewController.swift in Sources */,
 				07FABF4E274A9B3100EBE839 /* UserProfileViewController.swift in Sources */,
+				07A9C148275E8FEC00937C62 /* CardContentView.swift in Sources */,
 				07C54B19273A0FA7004C0742 /* MainLaunchViewController.swift in Sources */,
 				07C54B15273A0F81004C0742 /* UserRegisterViewController.swift in Sources */,
 				07C54B0B273A0F12004C0742 /* Login.swift in Sources */,
@@ -796,7 +845,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = ADD0321EBF9FE8EF4E78C169 /* Pods-PlayDateTests.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -822,7 +870,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = E69C065345D54A6F33AC46F4 /* Pods-PlayDateTests.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -848,7 +895,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = B43B28DE945D4D2508147712 /* Pods-PlayDate-PlayDateUITests.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 2LG7N2H9LJ;
@@ -872,7 +918,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = B48DB0AD9A0713CFA3591A2D /* Pods-PlayDate-PlayDateUITests.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 2LG7N2H9LJ;

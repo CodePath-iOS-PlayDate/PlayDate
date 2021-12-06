@@ -16,6 +16,7 @@ class UserProfileHeaderCell: UITableViewCell {
         stackView.axis = .vertical
         stackView.alignment = .center
         stackView.distribution = .equalCentering
+        stackView.spacing = 30
         return stackView
     }()
     
@@ -68,6 +69,7 @@ class UserProfileHeaderCell: UITableViewCell {
         
         let button = UIButton(configuration: config, primaryAction: nil)
         button.setImage(UIImage(systemName: "arrow.up.forward.circle.fill"), for: .normal)
+        button.addTarget(self, action: #selector(didTapLogout(_:)), for: .touchUpInside)
         
         return button
     }()
@@ -81,6 +83,14 @@ class UserProfileHeaderCell: UITableViewCell {
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        
+        self.editButton.frame = CGRect(x: 0, y: 0, width: 50, height: 50)
+        self.cameraButton.frame = CGRect(x: 0, y: 0, width: 50, height: 50)
+        self.signOutButton.frame = CGRect(x: 0, y: 0, width: 50, height: 50)
     }
     
     // MARK: View Setup
@@ -118,6 +128,29 @@ class UserProfileHeaderCell: UITableViewCell {
         self.buttonStackView.addArrangedSubview(editButton)
         self.buttonStackView.addArrangedSubview(cameraButton)
         self.buttonStackView.addArrangedSubview(signOutButton)
+    }
+    
+    @objc func didTapLogout(_ sender: Any) {
+        AuthManager.signOut() { [weak self] (success) in
+            guard let self = self else { return }
+            
+            if success {
+                UserDefaults.standard.setValue(false, forKey: CustomUserDefaults.isUserLoggedIn)
+                self.window?.rootViewController?.dismiss(animated: true) { [weak self] in
+                    guard let self = self else { return }
+                    let main = MainLaunchViewController()
+                    let logoImage = UIImage(named: "LogoMedium")
+                    main.logoImage = logoImage
+                    
+                    let navVC = UINavigationController(rootViewController: main)
+                    self.window?.rootViewController = navVC
+                }
+            } else {
+                let alert = UIAlertController(title: "Oops!", message: "Looks like we could not log you out. Please try again later", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+                self.window?.rootViewController?.present(alert, animated: true)
+            }
+        }
     }
 }
 

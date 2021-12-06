@@ -8,8 +8,8 @@
 import UIKit
 
 public enum Colors {
-    static let blueGreen = UIColor(named: "blueGreen")
-    static let bluePurple = UIColor(named: "bluePurple")
+    static let blueGreen = UIColor(named: "blueGreen")!
+    static let bluePurple = UIColor(named: "bluePurple")!
 }
 
 public enum CustomUserDefaults {

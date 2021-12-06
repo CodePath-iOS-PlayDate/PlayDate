@@ -12,24 +12,28 @@ class HomeTabBarController: UITabBarController, UITabBarControllerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         delegate = self
-    
-        // Do any additional setup after loading the view.
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
     
         let item1 = UINavigationController(rootViewController: FeedViewController())
-        let item2 = UINavigationController(rootViewController: MatchListViewController())
-        let item3 = UINavigationController(rootViewController: UserProfileViewController())
-        
         let icon1 = UITabBarItem(title: "Feed", image: UIImage(named: "feed.png"), selectedImage: UIImage(named: "feed-selected.png"))
-        let icon2 = UITabBarItem(title: "Matches", image: UIImage(named: "matches.png"), selectedImage: UIImage(named: "matches-selected.png"))
-        let icon3 = UITabBarItem(title: "Profile", image: UIImage(named: "profile.png"), selectedImage: UIImage(named: "profile-selected.png"))
-        
         item1.tabBarItem = icon1
+        item1.navigationItem.largeTitleDisplayMode = .always
+        item1.navigationBar.prefersLargeTitles = true
+        
+        let item2 = UINavigationController(rootViewController: MatchListViewController())
+        let icon2 = UITabBarItem(title: "Matches", image: UIImage(named: "matches.png"), selectedImage: UIImage(named: "matches-selected.png"))
         item2.tabBarItem = icon2
+        item2.navigationItem.largeTitleDisplayMode = .always
+        item2.navigationBar.prefersLargeTitles = true
+        
+        let item3 = UINavigationController(rootViewController: UserProfileViewController())
+        let icon3 = UITabBarItem(title: "Profile", image: UIImage(named: "profile.png"), selectedImage: UIImage(named: "profile-selected.png"))
         item3.tabBarItem = icon3
+        item3.navigationItem.largeTitleDisplayMode = .always
+        item3.navigationBar.prefersLargeTitles = true
         
         let controllers = [item1 , item2, item3] 
         self.viewControllers = controllers

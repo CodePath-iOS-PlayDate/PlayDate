@@ -32,12 +32,12 @@ An app for setting up play-dates with fellow pet owners.
 - [x] User can login
 - [x] Users can stay logged in between restarts
 - [ ] Users can upload pictures to their profile
-- [ ] Users can add their pet name, type, and age to their profile
+- [x] Users can add their pet name, type, and age to their profile
 - [x] Users can create a biography in their profile
 - [ ] Users can add external contact information to their profile to send to matches
-- [ ] Users can swipe left to reject a potential match
-- [ ] Users can swipe right to accept a potential match
-- [ ] Users can see contact information within their matches' profiles
+- [x] Users can swipe left to reject a potential match
+- [x] Users can swipe right to accept a potential match
+- [x] Users can see contact information within their matches' profiles
 
 **Optional Nice-to-have Stories**
 
