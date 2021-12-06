@@ -64,8 +64,4 @@ class AuthManager{
             completionBlock(false)
         }
     }
-  
-    func getUser()-> String{
-        return self.id!
-    }
 }

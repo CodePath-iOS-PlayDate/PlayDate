@@ -6,25 +6,41 @@
 //
 
 import UIKit
+import Shuffle_iOS
 
 class FeedViewController: UIViewController {
+    
+    let cardStack = SwipeCardStack()
 
     override func viewDidLoad() {
-        
         super.viewDidLoad()
         title = "Feed"
-        // Do any additional setup after loading the view.
+        
+        cardStack.dataSource = self
+        cardStack.delegate = self
+        view.addSubview(cardStack)
+        cardStack.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            cardStack.topAnchor.constraint(equalTo: view.topAnchor),
+            cardStack.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            cardStack.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            cardStack.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+        ])
+    }
+}
+
+extension FeedViewController: SwipeCardStackDataSource, SwipeCardStackDelegate {
+    func card(fromImage image: UIImage) -> SwipeCard {
+        let swipeCard = SwipeCard()
+        swipeCard.largeContentImage = UIImage(named: "LogoMedium")
+        return swipeCard
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func cardStack(_ cardStack: SwipeCardStack, cardForIndexAt index: Int) -> SwipeCard {
+        return card(fromImage: UIImage())
     }
-    */
-
+    
+    func numberOfCards(in cardStack: SwipeCardStack) -> Int {
+        return 1
+    }
 }
