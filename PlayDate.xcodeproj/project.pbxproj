@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		07A9C148275E8FEC00937C62 /* CardContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07A9C147275E8FEC00937C62 /* CardContentView.swift */; };
 		07A9C14C275E99C400937C62 /* CardSwipeOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07A9C14B275E99C400937C62 /* CardSwipeOverlay.swift */; };
+		07A9C14E275E9DFE00937C62 /* CardFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07A9C14D275E9DFE00937C62 /* CardFooterView.swift */; };
 		07C54B03273A0E7F004C0742 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C54B02273A0E7F004C0742 /* User.swift */; };
 		07C54B05273A0E9B004C0742 /* Pet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C54B04273A0E9B004C0742 /* Pet.swift */; };
 		07C54B07273A0EB5004C0742 /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C54B06273A0EB5004C0742 /* UserProfile.swift */; };
@@ -66,6 +67,7 @@
 /* Begin PBXFileReference section */
 		07A9C147275E8FEC00937C62 /* CardContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardContentView.swift; sourceTree = "<group>"; };
 		07A9C14B275E99C400937C62 /* CardSwipeOverlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardSwipeOverlay.swift; sourceTree = "<group>"; };
+		07A9C14D275E9DFE00937C62 /* CardFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardFooterView.swift; sourceTree = "<group>"; };
 		07C54B02273A0E7F004C0742 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		07C54B04273A0E9B004C0742 /* Pet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pet.swift; sourceTree = "<group>"; };
 		07C54B06273A0EB5004C0742 /* UserProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
@@ -181,6 +183,7 @@
 			children = (
 				07A9C147275E8FEC00937C62 /* CardContentView.swift */,
 				07A9C14B275E99C400937C62 /* CardSwipeOverlay.swift */,
+				07A9C14D275E9DFE00937C62 /* CardFooterView.swift */,
 			);
 			path = FeedViews;
 			sourceTree = "<group>";
@@ -593,6 +596,7 @@
 				07C54B1E273A1007004C0742 /* AuthManager.swift in Sources */,
 				2FED8F93274AFDCB00D7292A /* HomeTabBarController.swift in Sources */,
 				07DD75F12730288200EFBC9B /* ViewController.swift in Sources */,
+				07A9C14E275E9DFE00937C62 /* CardFooterView.swift in Sources */,
 				07DD75F72730288200EFBC9B /* PlayDate.xcdatamodeld in Sources */,
 				07DD75ED2730288200EFBC9B /* AppDelegate.swift in Sources */,
 				07C54B17273A0F8B004C0742 /* PetProfileSetupViewController.swift in Sources */,

@@ -68,7 +68,10 @@ extension FeedViewController: SwipeCardStackDataSource, SwipeCardStackDelegate {
 
         let petModel = petProfileCardModels[index]
         swipeCard.content = CardContentView(withImage: petModel.image)
-        // Set footer here
+        swipeCard.footer = CardFooterView(
+            withTitle: "\(petModel.name), \(petModel.age)",
+            subtitle: petModel.type
+        )
         return swipeCard
     }
     
@@ -78,10 +81,6 @@ extension FeedViewController: SwipeCardStackDataSource, SwipeCardStackDelegate {
     
     func didSwipeAllCards(_ cardStack: SwipeCardStack) {
       print("Swiped all cards!")
-    }
-    
-    func cardStack(_ cardStack: SwipeCardStack, didUndoCardAt index: Int, from direction: SwipeDirection) {
-      print("Undo \(direction) swipe on \(petProfileCardModels[index].name)")
     }
 
     func cardStack(_ cardStack: SwipeCardStack, didSwipeCardAt index: Int, with direction: SwipeDirection) {
