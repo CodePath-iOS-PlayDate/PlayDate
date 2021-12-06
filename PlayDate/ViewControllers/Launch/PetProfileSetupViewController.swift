@@ -7,7 +7,7 @@
 
 import UIKit
 
-class PetProfileSetupViewController: UIViewController {
+class PetProfileSetupViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     let verticalStackView: UIStackView = {
         let stackView = UIStackView()
@@ -139,12 +139,60 @@ class PetProfileSetupViewController: UIViewController {
         verticalStackView.addArrangedSubview(addPicturesButton)
         addPicturesButton.translatesAutoresizingMaskIntoConstraints = false
         addPicturesButton.widthAnchor.constraint(equalTo: verticalStackView.widthAnchor).isActive = true
-        
+        addPicturesButton.addTarget(self, action: #selector(uploadPetPictures(_:)), for: .touchUpInside)
         
         // Skip For Now Button
         verticalStackView.addArrangedSubview(skipButton)
+        skipButton.addTarget(self, action: #selector(doSkipButton(_:)), for: .touchUpInside)
         
     }
+    
+    @objc func doSkipButton(_ sender: UIButton) {
+        let homeTBC = HomeTabBarController()
+        homeTBC.modalPresentationStyle = .fullScreen
+        self.navigationController?.show(homeTBC, sender: self)
+    }
+    
+    @objc func uploadPetPictures(_ sender: UIButton) {
+        let alert = UIAlertController(title: "Profile Picture", message: "Please select a picture source", preferredStyle: .actionSheet)
+        alert.addAction(UIAlertAction(title: "Camera", style: .default, handler: { action in
+            let picker = UIImagePickerController()
+            if UIImagePickerController.isSourceTypeAvailable(.camera) {
+                picker.sourceType = .camera
+            } else {
+                picker.sourceType = .photoLibrary
+            }
+            picker.delegate = self
+            picker.allowsEditing = true
+            self.present(picker, animated: true, completion: nil)
+        }))
+        alert.addAction(UIAlertAction(title: "Photo Library", style: .default, handler: { action in
+            let picker = UIImagePickerController()
+            picker.sourceType = .photoLibrary
+            picker.delegate = self
+            picker.allowsEditing = true
+            self.present(picker, animated: true, completion: nil)
+        }))
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        present(alert, animated: true)
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        picker.dismiss(animated: true, completion: nil)
+        guard let image = info[UIImagePickerController.InfoKey.editedImage] as? UIImage else {
+            return
+        }
+        guard let imageData = image.pngData() else {
+            return
+        }
+        
+        //Firebase stuff go here
+    }
+    
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        picker.dismiss(animated: true, completion: nil)
+    }
+
     
     
 
