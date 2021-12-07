@@ -16,8 +16,6 @@ class MatchListViewController: UIViewController {
         return tableView
     }()
     
-    
-
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Matches"
@@ -26,11 +24,23 @@ class MatchListViewController: UIViewController {
         view.addSubview(tableView)
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        let appearance = UINavigationBarAppearance()
+        appearance.configureWithOpaqueBackground()
+        appearance.backgroundColor = UIColor.white
+        appearance.largeTitleTextAttributes = [.foregroundColor: Colors.blueGreen]
+        appearance.titleTextAttributes = [.foregroundColor: Colors.blueGreen]
+        appearance.shadowColor = .clear
+        self.navigationController?.navigationBar.standardAppearance = appearance
+        self.navigationController?.navigationBar.scrollEdgeAppearance = self.navigationController?.navigationBar.standardAppearance
+        self.navigationController?.navigationBar.layoutIfNeeded()
+    }
+    
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         tableView.frame = view.bounds
     }
-
 }
 
 extension MatchListViewController: UITableViewDataSource, UITableViewDelegate {
@@ -41,7 +51,6 @@ extension MatchListViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: MatchTableViewCell.identifier, for: indexPath)
-        
         return cell
     }
     
@@ -51,7 +60,7 @@ extension MatchListViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        
-        print("cell tapped")
+        let matchVC = MatchContactInfoViewController()
+        self.navigationController?.pushViewController(matchVC, animated: true)
     }
 }
