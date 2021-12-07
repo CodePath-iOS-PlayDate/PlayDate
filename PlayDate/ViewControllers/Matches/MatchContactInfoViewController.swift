@@ -23,7 +23,6 @@ class MatchContactInfoViewController: UITableViewController {
         self.navigationController?.navigationBar.scrollEdgeAppearance = self.navigationController?.navigationBar.standardAppearance
         self.navigationController?.navigationBar.layoutIfNeeded()
         
-        configureItems()
         self.registerCustomCells()
     }
     
@@ -90,11 +89,5 @@ class MatchContactInfoViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableView.automaticDimension
     }
-    
-    // Back button at the navigation bar
-    private func configureItems() {
-        self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Back", image: nil, primaryAction: nil, menu: nil)
-    }
-
 }
 

@@ -177,6 +177,7 @@
 			isa = PBXGroup;
 			children = (
 				4C2C2F4F2745B5C400123D5A /* MatchListViewController.swift */,
+				4C2C2F522754921D00123D5A /* MatchContactInfoViewController.swift */,
 			);
 			path = Matches;
 			sourceTree = "<group>";
@@ -236,7 +237,6 @@
 				078FBD542755AE27001C5F0D /* Matches */,
 				078FBD532755AE1F001C5F0D /* Feed */,
 				078FBD522755AE19001C5F0D /* Launch */,
-				4C2C2F522754921D00123D5A /* MatchContactInfoViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
