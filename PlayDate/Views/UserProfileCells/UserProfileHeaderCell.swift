@@ -7,7 +7,7 @@
 
 import UIKit
 
-class UserProfileHeaderCell: UITableViewCell {
+class UserProfileHeaderCell: UITableViewCell, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     static let identifier = "UserProfileHeaderCell"
     
@@ -56,6 +56,7 @@ class UserProfileHeaderCell: UITableViewCell {
         
         let button = UIButton(configuration: config, primaryAction: nil)
         button.setImage(UIImage(systemName: "camera.fill"), for: .normal)
+        button.addTarget(self, action: #selector(didTapCamera(_:)), for: .touchUpInside)
         
         return button
     }()
@@ -128,6 +129,46 @@ class UserProfileHeaderCell: UITableViewCell {
         self.buttonStackView.addArrangedSubview(editButton)
         self.buttonStackView.addArrangedSubview(cameraButton)
         self.buttonStackView.addArrangedSubview(signOutButton)
+    }
+    
+    @objc func didTapCamera(_ sender: Any) {
+        let alert = UIAlertController(title: "Select a Source", message: nil, preferredStyle: .actionSheet)
+        alert.addAction(UIAlertAction(title: "Camera", style: .default, handler: { action in
+            let picker = UIImagePickerController()
+            if UIImagePickerController.isSourceTypeAvailable(.camera) {
+                picker.sourceType = .camera
+            } else {
+                picker.sourceType = .photoLibrary
+            }
+            picker.delegate = self
+            picker.allowsEditing = true
+            self.window?.rootViewController?.present(picker, animated: true, completion: nil)
+        }))
+        alert.addAction(UIAlertAction(title: "Photo Library", style: .default, handler: { action in
+            let picker = UIImagePickerController()
+            picker.sourceType = .photoLibrary
+            picker.delegate = self
+            picker.allowsEditing = true
+            self.window?.rootViewController?.present(picker, animated: true, completion: nil)
+        }))
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        window?.rootViewController?.present(alert, animated: true)
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        picker.dismiss(animated: true, completion: nil)
+        guard let image = info[UIImagePickerController.InfoKey.editedImage] as? UIImage else {
+            return
+        }
+        guard let imageData = image.pngData() else {
+            return
+        }
+        
+        //Firebase stuff go here
+    }
+    
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        picker.dismiss(animated: true, completion: nil)
     }
     
     @objc func didTapLogout(_ sender: Any) {
