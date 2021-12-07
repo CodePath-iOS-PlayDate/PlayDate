@@ -151,16 +151,31 @@ class UserProfileSetupViewController: UIViewController, UIImagePickerControllerD
     
     //This needs some kind of error handling ***GUS
     @objc func userToPetSetup(_ sender: UIButton) {
-        
-        let username:String = userSetupLabel.text!
-        let bio:String = userBioTextField.text!
-        let age:Int = Int(userAgeTextField.text!)!
-        
-        let id = AuthManager.id!
-        let user = User(userID: id)
+        guard let username = userSetupLabel.text else {
+            self.presentAlert(title: "Oops!", message: "Looks like you left Username blank. Please fix and try again.")
+            return
+        }
+        guard let bio = userBioTextField.text else {
+            self.presentAlert(title: "Oops!", message: "Looks like you left Bio blank. Please fix and try again.")
+            return
+        }
+        guard let age = userAgeTextField.text else {
+            self.presentAlert(title: "Oops!", message: "Looks like you left Age blank. Please fix and try again.")
+            return
+        }
+        guard let ageNum = Int(age) else {
+            self.presentAlert(title: "Oops!", message: "Age is supposed to be a number. Please fix and try again.")
+            return
+        }
+        guard let userId = AuthManager.id else {
+            self.presentAlert(title: "Oops!", message: "Something went wrong with registering. Please close app and try again.")
+            return
+        }
+
+        let user = User(userID: userId)
         user.updateName(name: username)
         user.updateBio(bio: bio)
-        user.updateAge(age: age)
+        user.updateAge(age: ageNum)
        
         let petSetupVC = PetProfileSetupViewController()
         petSetupVC.modalPresentationStyle = .fullScreen
@@ -216,5 +231,10 @@ class UserProfileSetupViewController: UIViewController, UIImagePickerControllerD
     @objc func dismissKeyboard() {
         view.endEditing(true)
     }
-
+    
+    private func presentAlert(title: String, message: String) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: nil))
+        self.present(alert, animated: true)
+    }
 }

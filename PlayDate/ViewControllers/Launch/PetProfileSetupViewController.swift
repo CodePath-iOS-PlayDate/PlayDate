@@ -199,19 +199,41 @@ class PetProfileSetupViewController: UIViewController, UIImagePickerControllerDe
     }
     
     @objc func doDoneButton(_ sender: UIButton) {
-        let petName = petNameTextField.text!
-        let petBio = petBioTextField.text!
-        let petAge = Int(petAgeTextField.text!)!
-        let petType = petTypeTextField.text!
-        let petSex = petSexTextField.text!
-        
-        let id = AuthManager.id!
-        let user = User(userID: id)
-        
+        guard let petName = petNameTextField.text else {
+            self.presentAlert(title: "Oops!", message: "Looks like you left Pet Name blank. Please fix and try again.")
+            return
+        }
+        guard let petBio = petBioTextField.text else {
+            self.presentAlert(title: "Oops!", message: "Looks like you left Pet Bio blank. Please fix and try again.")
+            return
+        }
+        guard let petAge = petAgeTextField.text else {
+            self.presentAlert(title: "Oops!", message: "Looks like you left Pet Age blank. Please fix and try again.")
+            return
+        }
+        guard let petAgeNum = Int(petAge) else {
+            self.presentAlert(title: "Oops!", message: "Pet Age needs to be a number. Please fix and try again.")
+            return
+        }
+        guard let petType = petTypeTextField.text else {
+            self.presentAlert(title: "Oops!", message: "Looks like you left Pet Type blank. Please fix and try again.")
+            return
+        }
+        guard let petSex = petSexTextField.text else {
+            self.presentAlert(title: "Oops!", message: "Looks like you left Pet Sex blank. Please fix and try again.")
+            return
+        }
+        guard let userId = AuthManager.id else {
+            self.presentAlert(title: "Oops!", message: "Something went wrong with registering. Please close app and try again.")
+            return
+        }
+
+        // Need to update/add the user's pet here
+        let user = User(userID: userId)
         let pet = Pet()
         pet.updateName(name: petName)
         pet.updateBio(bio: petBio)
-        pet.updateAge(age: petAge)
+        pet.updateAge(age: petAgeNum)
         pet.updateType(type: petType)
         pet.updateSex(sex: petSex)
         //user.addPet(petID: pet)
@@ -277,4 +299,9 @@ class PetProfileSetupViewController: UIViewController, UIImagePickerControllerDe
         view.endEditing(true)
     }
 
+    private func presentAlert(title: String, message: String) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: nil))
+        self.present(alert, animated: true)
+    }
 }
