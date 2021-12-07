@@ -4,6 +4,9 @@
 //
 //  Created by Gustavo Cornejo on 11/21/21.
 //
+//  Group 2:
+//  Gustavo Cornejo, Denielle Abaquita, Michael Cubero, Nathan Moulton
+//
 
 import UIKit
 

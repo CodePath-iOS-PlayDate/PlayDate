@@ -30,7 +30,6 @@
 		07DD15E4274370FC00E4D3BE /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DD15E3274370FC00E4D3BE /* LoginViewController.swift */; };
 		07DD15E62743712100E4D3BE /* OnboardingTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DD15E52743712100E4D3BE /* OnboardingTextField.swift */; };
 		07DD75ED2730288200EFBC9B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DD75EC2730288200EFBC9B /* AppDelegate.swift */; };
-		07DD75F12730288200EFBC9B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DD75F02730288200EFBC9B /* ViewController.swift */; };
 		07DD75F72730288200EFBC9B /* PlayDate.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 07DD75F52730288200EFBC9B /* PlayDate.xcdatamodeld */; };
 		07DD75F92730288500EFBC9B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 07DD75F82730288500EFBC9B /* Assets.xcassets */; };
 		07DD75FC2730288500EFBC9B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 07DD75FA2730288500EFBC9B /* LaunchScreen.storyboard */; };
@@ -94,7 +93,6 @@
 		07DD15E52743712100E4D3BE /* OnboardingTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingTextField.swift; sourceTree = "<group>"; };
 		07DD75E92730288200EFBC9B /* PlayDate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PlayDate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		07DD75EC2730288200EFBC9B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		07DD75F02730288200EFBC9B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		07DD75F62730288200EFBC9B /* PlayDate.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PlayDate.xcdatamodel; sourceTree = "<group>"; };
 		07DD75F82730288500EFBC9B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		07DD75FB2730288500EFBC9B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -297,7 +295,6 @@
 				07C4DA392731915D00B36C49 /* Views */,
 				07C4DA3B2731917800B36C49 /* ViewControllers */,
 				07DD75EC2730288200EFBC9B /* AppDelegate.swift */,
-				07DD75F02730288200EFBC9B /* ViewController.swift */,
 				07DD75F82730288500EFBC9B /* Assets.xcassets */,
 				07DD75FA2730288500EFBC9B /* LaunchScreen.storyboard */,
 				07DD75FD2730288600EFBC9B /* Info.plist */,
@@ -613,7 +610,6 @@
 				07C54B1E273A1007004C0742 /* AuthManager.swift in Sources */,
 				2FED8F93274AFDCB00D7292A /* HomeTabBarController.swift in Sources */,
 				4C2C2F55275C14FA00123D5A /* MatchHeaderTableViewCell.swift in Sources */,
-				07DD75F12730288200EFBC9B /* ViewController.swift in Sources */,
 				07A9C14E275E9DFE00937C62 /* CardFooterView.swift in Sources */,
 				07DD75F72730288200EFBC9B /* PlayDate.xcdatamodeld in Sources */,
 				07DD75ED2730288200EFBC9B /* AppDelegate.swift in Sources */,
