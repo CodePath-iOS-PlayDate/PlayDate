@@ -184,7 +184,9 @@ class UserRegisterViewController: UIViewController {
                 
                 let userSetupVC = UserProfileSetupViewController()
                 userSetupVC.modalPresentationStyle = .fullScreen
-                strongSelf.present(userSetupVC, animated: true)
+                let navVC = UINavigationController(rootViewController: userSetupVC)
+                navVC.modalPresentationStyle = .fullScreen
+                strongSelf.navigationController?.present(navVC, animated: true)
             } else {
                 // Need additional error labels for
                 // other failure conditions.
