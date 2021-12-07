@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-class UserProfileSetupViewController: UIViewController {
+class UserProfileSetupViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     let verticalStackView: UIStackView = {
         let stackView = UIStackView()
@@ -94,8 +94,8 @@ class UserProfileSetupViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
+        hidesKeyboard()
         initView()
-        
     }
 
     // Properties
@@ -141,8 +141,9 @@ class UserProfileSetupViewController: UIViewController {
         verticalStackView.addArrangedSubview(addProfilePictureButton)
         addProfilePictureButton.translatesAutoresizingMaskIntoConstraints = false
         addProfilePictureButton.widthAnchor.constraint(equalTo: verticalStackView.widthAnchor).isActive = true
+        addProfilePictureButton.addTarget(self, action: #selector(uploadProfilePicture(_:)), for: .touchUpInside)
         
-        // Skip For Now Button
+        // Done Button
         verticalStackView.addArrangedSubview(doneButton)
         doneButton.addTarget(self, action: #selector(userToPetSetup(_:)), for: .touchUpInside)
         
@@ -164,6 +165,56 @@ class UserProfileSetupViewController: UIViewController {
         let petSetupVC = PetProfileSetupViewController()
         petSetupVC.modalPresentationStyle = .fullScreen
         self.navigationController?.show(petSetupVC, sender: self)
+    }
+    
+    @objc func uploadProfilePicture(_ sender: UIButton) {
+        let alert = UIAlertController(title: "Select a Source", message: nil, preferredStyle: .actionSheet)
+        alert.addAction(UIAlertAction(title: "Camera", style: .default, handler: { action in
+            let picker = UIImagePickerController()
+            if UIImagePickerController.isSourceTypeAvailable(.camera) {
+                picker.sourceType = .camera
+            } else {
+                picker.sourceType = .photoLibrary
+            }
+            picker.delegate = self
+            picker.allowsEditing = true
+            self.present(picker, animated: true, completion: nil)
+        }))
+        alert.addAction(UIAlertAction(title: "Photo Library", style: .default, handler: { action in
+            let picker = UIImagePickerController()
+            picker.sourceType = .photoLibrary
+            picker.delegate = self
+            picker.allowsEditing = true
+            self.present(picker, animated: true, completion: nil)
+        }))
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        present(alert, animated: true)
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        picker.dismiss(animated: true, completion: nil)
+        guard let image = info[UIImagePickerController.InfoKey.editedImage] as? UIImage else {
+            return
+        }
+        guard let imageData = image.pngData() else {
+            return
+        }
+        
+        //Firebase stuff go here
+    }
+    
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        picker.dismiss(animated: true, completion: nil)
+    }
+    
+    func hidesKeyboard() {
+        let tap = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+        tap.cancelsTouchesInView = false
+        view.addGestureRecognizer(tap)
+    }
+    
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
     }
 
 }

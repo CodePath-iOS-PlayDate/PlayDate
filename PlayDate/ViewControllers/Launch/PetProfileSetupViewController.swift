@@ -7,7 +7,7 @@
 
 import UIKit
 
-class PetProfileSetupViewController: UIViewController {
+class PetProfileSetupViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     let verticalStackView: UIStackView = {
         let stackView = UIStackView()
@@ -38,8 +38,17 @@ class PetProfileSetupViewController: UIViewController {
         return textField
     }()
     
-    let petTypeTextField: UITextField = {
+    let petBioTextField: UITextField = {
         let textField = UITextField(frame: CGRect(x: 20, y: 360, width: 300.0, height: 30.0));
+        textField.placeholder = "Pet Bio"
+        textField.borderStyle = .roundedRect
+        textField.translatesAutoresizingMaskIntoConstraints = false
+    
+        return textField
+    }()
+    
+    let petTypeTextField: UITextField = {
+        let textField = UITextField(frame: CGRect(x: 20, y: 400, width: 300.0, height: 30.0));
         textField.placeholder = "Pet Type"
         textField.borderStyle = .roundedRect
         textField.translatesAutoresizingMaskIntoConstraints = false
@@ -48,8 +57,18 @@ class PetProfileSetupViewController: UIViewController {
     }()
     
     let petAgeTextField: UITextField = {
-        let textField = UITextField(frame: CGRect(x: 20, y: 400, width: 300.0, height: 30.0));
+        let textField = UITextField(frame: CGRect(x: 20, y: 440, width: 300.0, height: 30.0));
+        textField.keyboardType = .numberPad
         textField.placeholder = "Pet Age"
+        textField.borderStyle = .roundedRect
+        textField.translatesAutoresizingMaskIntoConstraints = false
+
+        return textField
+    }()
+    
+    let petSexTextField: UITextField = {
+        let textField = UITextField(frame: CGRect(x: 20, y: 480, width: 300.0, height: 30.0));
+        textField.placeholder = "Pet Sex"
         textField.borderStyle = .roundedRect
         textField.translatesAutoresizingMaskIntoConstraints = false
 
@@ -71,6 +90,22 @@ class PetProfileSetupViewController: UIViewController {
         return UIButton(configuration: config, primaryAction: action)
     }()
     
+    let doneButton: UIButton = {
+        var config = UIButton.Configuration.borderless()
+        config.buttonSize = .small
+        
+        var container = AttributeContainer()
+        container.font = .systemFont(ofSize: 20.0, weight: .regular)
+        container.foregroundColor = .systemBlue
+        config.attributedTitle = AttributedString("Done", attributes: container)
+        
+        var action = UIAction() { _ in
+                    print("Done button pressed")
+                }
+        
+        return UIButton(configuration: config, primaryAction: action)
+    }()
+    
     let skipButton: UIButton = {
         var config = UIButton.Configuration.borderless()
         config.buttonSize = .small
@@ -78,10 +113,10 @@ class PetProfileSetupViewController: UIViewController {
         var container = AttributeContainer()
         container.font = .systemFont(ofSize: 20.0, weight: .regular)
         container.foregroundColor = .systemBlue
-        config.attributedTitle = AttributedString("Skip for now", attributes: container)
+        config.attributedTitle = AttributedString("Skip", attributes: container)
         
         var action = UIAction() { _ in
-                    print("Skipping ahead")
+                    print("Skip button pressed")
                 }
         
         return UIButton(configuration: config, primaryAction: action)
@@ -91,8 +126,8 @@ class PetProfileSetupViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
+        hidesKeyboard()
         initView()
-        
     }
     
     // Properties
@@ -111,6 +146,9 @@ class PetProfileSetupViewController: UIViewController {
             verticalStackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -26),
         ])
         
+        // Skip Button
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem.init(customView: skipButton)
+        skipButton.addTarget(self, action: #selector(doSkipButton(_:)), for: .touchUpInside)
         
         // Pet Setup Label
         verticalStackView.addArrangedSubview(petSetupLabel)
@@ -120,6 +158,12 @@ class PetProfileSetupViewController: UIViewController {
         petNameTextField.setContentCompressionResistancePriority(.required, for: .vertical)
         verticalStackView.addArrangedSubview(petNameTextField)
         petNameTextField.widthAnchor.constraint(equalTo: verticalStackView.widthAnchor).isActive = true
+        
+        // Pet Bio Text Field
+        petBioTextField.setContentHuggingPriority(.required, for: .vertical)
+        petBioTextField.setContentCompressionResistancePriority(.required, for: .vertical)
+        verticalStackView.addArrangedSubview(petBioTextField)
+        petBioTextField.widthAnchor.constraint(equalTo: verticalStackView.widthAnchor).isActive = true
         
         // Pet Type Text Field
         petTypeTextField.setContentHuggingPriority(.required, for: .vertical)
@@ -133,19 +177,103 @@ class PetProfileSetupViewController: UIViewController {
         verticalStackView.addArrangedSubview(petAgeTextField)
         petAgeTextField.widthAnchor.constraint(equalTo: verticalStackView.widthAnchor).isActive = true
         
+        // Pet Sex Text Field
+        petSexTextField.setContentHuggingPriority(.required, for: .vertical)
+        petSexTextField.setContentCompressionResistancePriority(.required, for: .vertical)
+        verticalStackView.addArrangedSubview(petSexTextField)
+        petSexTextField.widthAnchor.constraint(equalTo: verticalStackView.widthAnchor).isActive = true
+        
         // Add Pictures Button
         addPicturesButton.setContentHuggingPriority(.required, for: .vertical)
         addPicturesButton.setContentCompressionResistancePriority(.required, for: .vertical)
         verticalStackView.addArrangedSubview(addPicturesButton)
         addPicturesButton.translatesAutoresizingMaskIntoConstraints = false
         addPicturesButton.widthAnchor.constraint(equalTo: verticalStackView.widthAnchor).isActive = true
+        addPicturesButton.addTarget(self, action: #selector(uploadPetPictures(_:)), for: .touchUpInside)
         
-        
-        // Skip For Now Button
-        verticalStackView.addArrangedSubview(skipButton)
+        // Done Button
+        verticalStackView.addArrangedSubview(doneButton)
+        doneButton.addTarget(self, action: #selector(doDoneButton(_:)), for: .touchUpInside)
         
     }
     
+    @objc func doDoneButton(_ sender: UIButton) {
+        let petName = petNameTextField.text!
+        let petBio = petBioTextField.text!
+        let petAge = Int(petAgeTextField.text!)!
+        let petType = petTypeTextField.text!
+        let petSex = petSexTextField.text!
+        
+        let id = AuthManager.id!
+        let user = User(userID: id)
+        
+        let pet = Pet()
+        pet.updateName(name: petName)
+        pet.updateBio(bio: petBio)
+        pet.updateAge(age: petAge)
+        pet.updateType(type: petType)
+        pet.updateSex(sex: petSex)
+        //user.addPet(petID: pet)
+        
+        let petSetupVC = PetProfileSetupViewController()
+        petSetupVC.modalPresentationStyle = .fullScreen
+        self.navigationController?.show(petSetupVC, sender: self)
+    }
     
+    @objc func doSkipButton(_ sender: UIButton) {
+        let homeTBC = HomeTabBarController()
+        homeTBC.modalPresentationStyle = .fullScreen
+        self.navigationController?.show(homeTBC, sender: self)
+    }
+    
+    @objc func uploadPetPictures(_ sender: UIButton) {
+        let alert = UIAlertController(title: "Select a Source", message: nil, preferredStyle: .actionSheet)
+        alert.addAction(UIAlertAction(title: "Camera", style: .default, handler: { action in
+            let picker = UIImagePickerController()
+            if UIImagePickerController.isSourceTypeAvailable(.camera) {
+                picker.sourceType = .camera
+            } else {
+                picker.sourceType = .photoLibrary
+            }
+            picker.delegate = self
+            picker.allowsEditing = true
+            self.present(picker, animated: true, completion: nil)
+        }))
+        alert.addAction(UIAlertAction(title: "Photo Library", style: .default, handler: { action in
+            let picker = UIImagePickerController()
+            picker.sourceType = .photoLibrary
+            picker.delegate = self
+            picker.allowsEditing = true
+            self.present(picker, animated: true, completion: nil)
+        }))
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        present(alert, animated: true)
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        picker.dismiss(animated: true, completion: nil)
+        guard let image = info[UIImagePickerController.InfoKey.editedImage] as? UIImage else {
+            return
+        }
+        guard let imageData = image.pngData() else {
+            return
+        }
+        
+        //Firebase stuff go here
+    }
+    
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        picker.dismiss(animated: true, completion: nil)
+    }
+    
+    func hidesKeyboard() {
+        let tap = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+        tap.cancelsTouchesInView = false
+        view.addGestureRecognizer(tap)
+    }
+    
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
+    }
 
 }
