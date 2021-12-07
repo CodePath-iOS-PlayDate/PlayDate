@@ -192,9 +192,10 @@ class PetProfileSetupViewController: UIViewController, UIImagePickerControllerDe
         addPicturesButton.addTarget(self, action: #selector(uploadPetPictures(_:)), for: .touchUpInside)
         
         // Done Button
+        doneButton.setContentHuggingPriority(.required, for: .vertical)
+        doneButton.setContentCompressionResistancePriority(.required, for: .vertical)
         verticalStackView.addArrangedSubview(doneButton)
         doneButton.addTarget(self, action: #selector(doDoneButton(_:)), for: .touchUpInside)
-        
     }
     
     @objc func doDoneButton(_ sender: UIButton) {
@@ -215,15 +216,15 @@ class PetProfileSetupViewController: UIViewController, UIImagePickerControllerDe
         pet.updateSex(sex: petSex)
         //user.addPet(petID: pet)
         
-        let petSetupVC = PetProfileSetupViewController()
-        petSetupVC.modalPresentationStyle = .fullScreen
-        self.navigationController?.show(petSetupVC, sender: self)
+        let homeTBC = HomeTabBarController()
+        homeTBC.modalPresentationStyle = .fullScreen
+        self.navigationController?.present(homeTBC, animated: true)
     }
     
     @objc func doSkipButton(_ sender: UIButton) {
         let homeTBC = HomeTabBarController()
         homeTBC.modalPresentationStyle = .fullScreen
-        self.navigationController?.show(homeTBC, sender: self)
+        self.navigationController?.present(homeTBC, animated: true)
     }
     
     @objc func uploadPetPictures(_ sender: UIButton) {
