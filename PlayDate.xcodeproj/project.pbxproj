@@ -156,8 +156,8 @@
 		078FBD522755AE19001C5F0D /* Launch */ = {
 			isa = PBXGroup;
 			children = (
-				07A9C153275EC44000937C62 /* UserProfileSetupViewController.swift */,
 				07C54B14273A0F81004C0742 /* UserRegisterViewController.swift */,
+				07A9C153275EC44000937C62 /* UserProfileSetupViewController.swift */,
 				07C54B16273A0F8B004C0742 /* PetProfileSetupViewController.swift */,
 				07C54B18273A0FA7004C0742 /* MainLaunchViewController.swift */,
 				07DD15E3274370FC00E4D3BE /* LoginViewController.swift */,
