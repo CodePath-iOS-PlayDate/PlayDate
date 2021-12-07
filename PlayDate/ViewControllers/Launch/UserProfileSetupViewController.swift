@@ -94,8 +94,8 @@ class UserProfileSetupViewController: UIViewController, UIImagePickerControllerD
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
+        hidesKeyboard()
         initView()
-        
     }
 
     // Properties
@@ -143,7 +143,7 @@ class UserProfileSetupViewController: UIViewController, UIImagePickerControllerD
         addProfilePictureButton.widthAnchor.constraint(equalTo: verticalStackView.widthAnchor).isActive = true
         addProfilePictureButton.addTarget(self, action: #selector(uploadProfilePicture(_:)), for: .touchUpInside)
         
-        // Skip For Now Button
+        // Done Button
         verticalStackView.addArrangedSubview(doneButton)
         doneButton.addTarget(self, action: #selector(userToPetSetup(_:)), for: .touchUpInside)
         
@@ -168,7 +168,7 @@ class UserProfileSetupViewController: UIViewController, UIImagePickerControllerD
     }
     
     @objc func uploadProfilePicture(_ sender: UIButton) {
-        let alert = UIAlertController(title: "Profile Picture", message: "Please select a picture source", preferredStyle: .actionSheet)
+        let alert = UIAlertController(title: "Select a Source", message: nil, preferredStyle: .actionSheet)
         alert.addAction(UIAlertAction(title: "Camera", style: .default, handler: { action in
             let picker = UIImagePickerController()
             if UIImagePickerController.isSourceTypeAvailable(.camera) {
@@ -205,6 +205,16 @@ class UserProfileSetupViewController: UIViewController, UIImagePickerControllerD
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         picker.dismiss(animated: true, completion: nil)
+    }
+    
+    func hidesKeyboard() {
+        let tap = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+        tap.cancelsTouchesInView = false
+        view.addGestureRecognizer(tap)
+    }
+    
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
     }
 
 }

@@ -51,6 +51,10 @@ struct Pet {
 
     }
     
+    func updateSex(sex: String){
+        coll.document("\(self.id)").setData(["sex": sex], merge: true)
+
+    }
     
     func updateBio(bio: String){
         coll.document("\(self.id)").setData(["bio": bio], merge: true)
