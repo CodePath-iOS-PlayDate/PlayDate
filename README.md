@@ -38,6 +38,7 @@ An app for setting up play-dates with fellow pet owners.
 - [x] Users can swipe left to reject a potential match
 - [x] Users can swipe right to accept a potential match
 - [x] Users can see contact information within their matches' profiles
+- [ ] Complete back-end and front-end connection
 
 **Optional Nice-to-have Stories**
 
